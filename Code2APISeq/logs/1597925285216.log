@@ -1,0 +1,315 @@
+文件夹:.git
+文件夹:.github
+文件夹:.idea
+文件夹:art
+文件夹:benchmark
+文件夹:src
+文件夹:main
+文件夹:java
+文件夹:com
+文件夹:orhanobut
+文件夹:benchmark
+文件名:MainActivity.java
+文件夹:res
+文件夹:layout
+文件夹:mipmap-hdpi
+文件夹:values
+文件夹:gradle
+文件夹:wrapper
+文件夹:hawk
+文件夹:src
+文件夹:androidTest
+文件夹:java
+文件夹:com
+文件夹:orhanobut
+文件夹:hawk
+文件名:ConcealEncryptionTest.java
+文件名:ConcealTest.java
+文件夹:main
+文件夹:java
+文件夹:com
+文件夹:orhanobut
+文件夹:hawk
+文件名:ConcealEncryption.java
+文件名:Converter.java
+Empty
+文件名:DataInfo.java
+Empty
+文件名:DefaultHawkFacade.java
+文件名:Encryption.java
+Empty
+文件名:GsonParser.java
+文件名:Hawk.java
+文件名:HawkBuilder.java
+文件名:HawkConverter.java
+文件名:HawkFacade.java
+文件名:HawkSerializer.java
+文件名:HawkUtils.java
+文件名:LogInterceptor.java
+Empty
+文件名:NoEncryption.java
+文件名:Parser.java
+Empty
+文件名:Serializer.java
+Empty
+文件名:SharedPreferencesStorage.java
+文件名:Storage.java
+Empty
+文件夹:test
+文件夹:java
+文件夹:com
+文件夹:orhanobut
+文件夹:hawk
+文件名:DefaultHawkFacadeTest.java
+文件名:EmptyHawkFacadeTest.java
+文件名:FooBar.java
+Empty
+文件名:HawkBuilderTest.java
+文件名:HawkConverterTest.java
+文件名:HawkFacadeIntegrationTest.java
+文件名:HawkSerializerTest.java
+文件名:HawkTest.java
+文件名:HawkUtilsTest.java
+文件名:NoEncryptionTest.java
+文件名:SharedPreferencesStorageTest.java
+HawkTest.contains=
+HawkFacadeIntegrationTest.setUp=
+HawkSerializer.serialize=List.cast;List.isEmpty;List.get;Map.cast;Map<>.isEmpty;Map<>.entrySet;Entry<>.getKey;Entry<>.getValue;Set.cast;Set.isEmpty;Set.iterator;Iterator.hasNext;Iterator.next;
+Hawk.get=
+SharedPreferencesStorageTest.contains=
+SharedPreferencesStorageTest.throwExceptionOnNullKeysPassedOnPut=
+HawkTest.get=
+HawkConverterTest.decodeObject=Serializer.deserialize;
+HawkSerializerTest.serializeCustomObject=Serializer.serialize;
+HawkConverterTest.decodeInvalidValues=
+NoEncryptionTest.init=
+Hawk.destroy=
+HawkFacadeIntegrationTest.testHugeData=
+SharedPreferencesStorage.SharedPreferencesStorage=Context.getSharedPreferences;
+HawkUtilsTest.isEmpty=
+HawkBuilder.build=
+HawkBuilderTest.testParser=
+SharedPreferencesStorageTest.setup=HashMap.<init>;Map<String,Object>.put;
+ConcealTest.setup=
+MainActivity.timeHawkPut=System.currentTimeMillis;
+EmptyHawkFacadeTest.delete=
+SharedPreferencesStorage.delete=
+Hawk.count=
+HawkFacadeIntegrationTest.testCount=
+HawkTest.testInit=
+DefaultHawkFacadeTest.getFailsOnDeserialize=Storage.get;Serializer.deserialize;
+SharedPreferencesStorage.deleteAll=
+DefaultHawkFacade.count=Storage.count;
+HawkFacade.destroy=
+EmptyHawkFacadeTest.deleteAll=
+ConcealTest.cryptoIsAvailable=
+HawkFacadeIntegrationTest.testSingleItemDefault=
+HawkTest.deleteAll=
+HawkBuilder.getEncryption=
+HawkUtils.isEmpty=String.trim;
+HawkFacadeIntegrationTest.testSingleItem=
+EmptyHawkFacadeTest.contains=
+HawkFacade.get=
+NoEncryption.encrypt=String.getBytes;
+HawkBuilderTest.testEncryption=
+HawkConverterTest.encodeList=ArrayList.<init>;List<String>.add;Parser.toJson;
+ConcealEncryptionTest.init=
+HawkConverterTest.encodeCustomObject=Parser.toJson;
+DefaultHawkFacadeTest.delete=Storage.delete;
+HawkTest.put=
+HawkFacadeIntegrationTest.testDelete=
+DefaultHawkFacadeTest.putFailsOnEncrypt=
+SharedPreferencesStorageTest.remove=
+DefaultHawkFacadeTest.getFailsOnConvert=Storage.get;Serializer.deserialize;
+DefaultHawkFacadeTest.getFailsOnDecrypt=Storage.get;Serializer.deserialize;
+HawkConverterTest.setup=
+DefaultHawkFacade.deleteAll=Storage.deleteAll;
+NoEncryption.decrypt=String.<init>;
+Hawk.init=
+HawkSerializerTest.serializeList=ArrayList.<init>;List<String>.add;Serializer.serialize;
+SharedPreferencesStorage.getEditor=
+NoEncryptionTest.encrypt=
+HawkBuilder.getLogInterceptor=
+NoEncryptionTest.decrypt=
+DefaultHawkFacadeTest.getWithDefault=
+Hawk.isBuilt=
+HawkConverter.toList=ArrayList.<init>;Parser.fromJson;List.size;List.get;Parser.toJson;List.set;
+MainActivity.timeHawkContains=System.currentTimeMillis;
+ConcealEncryption.encrypt=Entity.create;String.getBytes;Base64.encodeToString;
+ConcealEncryption.ConcealEncryption=
+HawkConverter.fromString=
+HawkTest.setup=
+SharedPreferencesStorage.put=String.valueOf;
+ConcealEncryption.init=
+HawkFacade.contains=
+EmptyHawkFacadeTest.getWithDefault=
+ConcealEncryptionTest.testEncryptAndDecrypt=
+EmptyHawkFacadeTest.get=
+HawkBuilder.getConverter=
+HawkConverterTest.createInstanceWithInvalidValues=
+EmptyHawkFacadeTest.assertFail=
+DefaultHawkFacadeTest.count=Storage.count;
+DefaultHawkFacade.delete=Storage.delete;
+Hawk.build=
+NoEncryption.decodeBase64=Base64.decode;
+HawkConverterTest.encodeInvalidValues=
+DefaultHawkFacadeTest.getFailsOnStorage=Storage.get;
+NoEncryptionTest.decodeBase64=Base64.decode;
+EmptyHawkFacadeTest.isBuilt=
+NoEncryptionTest.setup=
+HawkSerializerTest.serializeEmptyMap=HashMap.<init>;Serializer.serialize;
+HawkSerializer.getCipherText=String.indexOf;String.substring;
+HawkSerializerTest.serializeEmptyList=ArrayList.<init>;Serializer.serialize;
+GsonParser.toJson=
+HawkFacade.put=
+HawkFacade.throwValidation=
+HawkConverterTest.encodeString=Parser.toJson;
+DefaultHawkFacadeTest.deleteAll=Storage.deleteAll;
+HawkFacadeIntegrationTest.testEmptyMap=HashMap.<init>;
+HawkConverterTest.encodeSet=HashSet.<init>;Set<String>.add;Parser.toJson;
+HawkFacadeIntegrationTest.testEmptySet=HashSet.<init>;
+HawkSerializerTest.serializeEmptySet=HashSet.<init>;Serializer.serialize;
+HawkFacade.count=
+DefaultHawkFacadeTest.contains=Storage.contains;
+HawkUtils.checkNull=
+EmptyHawkFacadeTest.count=
+HawkFacadeIntegrationTest.testSet=HashSet.<init>;Set<String>.add;Set<String>.contains;
+ConcealEncryptionTest.setup=
+NoEncryption.encodeBase64=Base64.encodeToString;
+HawkFacadeIntegrationTest.tearDown=
+ConcealEncryption.decrypt=Entity.create;Base64.decode;String.<init>;
+DefaultHawkFacadeTest.putFailsOnStorage=Serializer.serialize;Storage.put;
+DefaultHawkFacadeTest.putFailsOnConvert=
+HawkUtilsTest.checkNullShouldThrowException=
+DefaultHawkFacade.put=Serializer.serialize;Storage.put;
+HawkSerializerTest.deserializeList=Serializer.deserialize;
+HawkUtilsTest.checkNullOrEmptyThrowException=
+EmptyHawkFacadeTest.put=
+MainActivity.timeHawkDelete=System.currentTimeMillis;
+HawkBuilder.getStorage=
+HawkConverter.HawkConverter=
+HawkTest.count=
+HawkFacade.deleteAll=
+HawkFacade.delete=
+HawkBuilderTest.testInit=
+HawkFacadeIntegrationTest.testMap=HashMap.<init>;Map<String,String>.put;Map<String,String>.get;
+SharedPreferencesStorage.get=
+SharedPreferencesStorage.count=
+HawkConverterTest.encodeMap=HashMap.<init>;Map<String,String>.put;Parser.toJson;
+HawkSerializerTest.deserializeCustomObject=Serializer.deserialize;
+HawkUtils.checkNullOrEmpty=
+DefaultHawkFacade.DefaultHawkFacade=
+HawkFacadeIntegrationTest.testDeleteAll=
+HawkTest.tearDown=
+HawkUtilsTest.checkNullShouldDoNothing=
+DefaultHawkFacadeTest.getSuccess=Storage.get;Serializer.deserialize;
+DefaultHawkFacadeTest.putSuccess=Serializer.serialize;Storage.put;
+DefaultHawkFacadeTest.setup=
+ConcealTest.testConceal=Entity.create;String.getBytes;String.<init>;
+HawkConverter.toObject=Parser.fromJson;
+HawkSerializerTest.deserializeString=Serializer.deserialize;
+HawkSerializerTest.setup=
+HawkSerializerTest.deserializeMap=Serializer.deserialize;
+HawkBuilder.getSerializer=
+HawkBuilder.getParser=
+SharedPreferencesStorageTest.count=
+DefaultHawkFacadeTest.putFailsOnSerialize=Serializer.serialize;
+HawkFacadeIntegrationTest.testContains=
+Hawk.put=
+HawkSerializerTest.serializeSet=HashSet.<init>;Set<String>.add;Serializer.serialize;
+GsonParser.fromJson=
+Hawk.delete=
+HawkBuilderTest.setup=
+HawkSerializerTest.serializeMap=HashMap.<init>;Map<String,String>.put;Serializer.serialize;
+DefaultHawkFacade.log=
+HawkConverter.toString=Parser.toJson;
+SharedPreferencesStorageTest.deleteAll=
+MainActivity.timeHawkInit=System.currentTimeMillis;
+SharedPreferencesStorage.contains=
+HawkBuilder.HawkBuilder=Context.getApplicationContext;
+HawkBuilderTest.testSerializer=
+HawkUtilsTest.checkNullOrEmptyShouldDoNothing=
+SharedPreferencesStorageTest.get=
+DefaultHawkFacade.contains=Storage.contains;
+HawkTest.isBuilt=
+HawkTest.getWithDefault=
+Hawk.contains=
+HawkFacadeIntegrationTest.testList=ArrayList.<init>;List<String>.add;List<String>.get;
+MainActivity.timeHawkCount=System.currentTimeMillis;
+HawkConverter.toSet=HashSet.<init>;Parser.fromJson;Parser.toJson;Set.add;
+DefaultHawkFacadeTest.getNullKey=
+NoEncryptionTest.encodeBase64=String.getBytes;Base64.encodeToString;
+HawkTest.delete=
+DefaultHawkFacadeTest.isBuilt=
+HawkConverter.toMap=HashMap.<init>;Parser.fromJson;Map<>.entrySet;Entry<>.getKey;Parser.toJson;Entry<>.getValue;Map<>.put;
+SharedPreferencesStorageTest.putObject=
+MainActivity.onCreate=
+HawkSerializer.deserialize=String.split;String.length;Class.forName;
+Hawk.deleteAll=
+HawkBuilderTest.testStorage=
+HawkSerializerTest.serializeString=Serializer.serialize;String.getClass;
+HawkSerializerTest.deserializeSet=Serializer.deserialize;
+DefaultHawkFacadeTest.putFailsOnNullKey=
+HawkFacadeIntegrationTest.testEmptyList=ArrayList.<init>;
+HawkBuilderTest.testConverter=
+DefaultHawkFacade.get=Storage.get;Serializer.deserialize;
+MainActivity.timeHawkGet=System.currentTimeMillis;
+HawkBuilderTest.testLogInterceptor=
+api count:53
+System.currentTimeMillis Entity.create String.getBytes String.<init> Base64.decode Base64.encodeToString Storage.contains Storage.delete Storage.deleteAll Storage.count Storage.get Serializer.deserialize Serializer.serialize Storage.put Context.getApplicationContext HashMap.<init> Parser.fromJson Map<>.entrySet Entry<>.getKey Parser.toJson Entry<>.getValue Map<>.put HashSet.<init> Set.add ArrayList.<init> List.size List.get List.set String.indexOf String.substring String.split String.length Class.forName List.cast List.isEmpty Map.cast Map<>.isEmpty Set.cast Set.isEmpty Set.iterator Iterator.hasNext Iterator.next String.trim String.valueOf Context.getSharedPreferences Set<String>.add Map<String,String>.put List<String>.add Set<String>.contains Map<String,String>.get List<String>.get String.getClass Map<String,Object>.put 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 2, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 2, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 1, 1, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 1]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 2, 1, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 1, 2, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 3, 1, 1, 0, 1, 1, 2, 1, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 2, 1, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 2, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+保存成功！路径：dots/1597925286715.dot
+dot path:dots/1597925286715.dot
+png path:pngs/1597925286715.png
