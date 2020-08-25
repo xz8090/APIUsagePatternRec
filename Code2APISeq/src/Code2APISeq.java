@@ -78,7 +78,7 @@ public class Code2APISeq {
 		//String code=args[0];
 		//String apiseq=code2apiseq(code);
 		
-		String fileUrl = "C:\\Users\\Administrator\\Downloads\\java-med\\java-med\\training\\Cleveroad__FanLayoutManager";
+		String fileUrl = "C:\\Users\\Administrator\\Downloads\\MPAndroidChart-master\\MPAndroidChart-master";
 		folder2apiseq(fileUrl);
 		
 		int vcount = allDiffAPIS.size();

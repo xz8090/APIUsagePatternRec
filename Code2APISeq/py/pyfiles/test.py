@@ -13,5 +13,5 @@ if __name__=='__main__':
     [0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0],
     [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1],
     [1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0]]
-    utils.adMmatrix2Img(matrix,'D:/java0154239/test/Code2APISeq/pngs/test.png')
+    utils.adMmatrix2Img(matrix,'C:/Users/Administrator/git/APIUsePattern/Code2APISeq/pngs/test.png')
     print('finish')

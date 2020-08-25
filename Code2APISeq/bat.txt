@@ -1,0 +1,2 @@
+需要更新numpy
+pip install --upgrade numpy  --user -i http://pypi.douban.com/simple --trusted-host pypi.douban.com
