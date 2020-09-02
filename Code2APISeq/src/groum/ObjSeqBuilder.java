@@ -293,7 +293,6 @@ public class ObjSeqBuilder
                     graph.mergeSeq(this.traverse(cfgNode, child5));
                 }
                 final MethodInvocation mNode = (MethodInvocation)root;
-                System.out.println(mNode.getName());
                 if (mNode.getExpression() != null) {
                     final String ex2 = mNode.getExpression().toString();
                     if (ex2.contains("System.") || ex2.contains("java.")) {

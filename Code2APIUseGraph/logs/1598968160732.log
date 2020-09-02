@@ -1,0 +1,304 @@
+文件名:.classpath
+文件名:.project
+文件夹:data
+文件名:iris.txt
+文件名:test.txt
+文件名:train.txt
+文件夹:pictures
+文件名:BP.png
+文件名:BPNN.png
+文件名:Node.png
+文件名:README.md
+文件夹:src
+文件夹:com
+文件夹:jingchen
+文件夹:ann
+文件名:AnnClassifier.java
+classname:DataNode
+classnameelements:[Ljava.lang.String;@708f5957
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@68999068
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@7722c3c3
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@2ef3eef9
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@243c4f91
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@291ae
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@61df66b6
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@50eac852
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@16ec5519
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@2f7298b
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@188715b5
+classname:Math
+classnameelements:[Ljava.lang.String;@1ea9f6af
+classname:float
+classnameelements:[Ljava.lang.String;@6a192cfe
+classname:Math
+classnameelements:[Ljava.lang.String;@5119fb47
+classname:float
+classnameelements:[Ljava.lang.String;@7193666c
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@20deea7f
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@3835c46
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@1dde4cb2
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@7714e963
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@20ce78ec
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@393671df
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@56620197
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@6eda5c9
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@55b7a4e0
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@5f058f00
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@192d43ce
+classname:List < Float > 
+classnameelements:[Ljava.lang.String;@72057ecf
+classname:List < Float > 
+classnameelements:[Ljava.lang.String;@1afd44cb
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@6973b51b
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@1ab3a8c8
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@43195e57
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@333291e3
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@479d31f3
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@40ef3420
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@498d318c
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@6e171cd7
+classname:List < NetworkNode > 
+classnameelements:[Ljava.lang.String;@402bba4f
+classname:ArrayList < DataNode > 
+classnameelements:[Ljava.lang.String;@795cd85e
+classname:ArrayList < NetworkNode > 
+classnameelements:[Ljava.lang.String;@59fd97a8
+文件名:DataNode.java
+classname:ArrayList < Float > 
+classnameelements:[Ljava.lang.String;@158d2680
+classname:List < Float > 
+classnameelements:[Ljava.lang.String;@77847718
+文件名:MainClass.java
+classname:ConsoleHelper
+classnameelements:[Ljava.lang.String;@35aea049
+classname:ConsoleHelper
+classnameelements:[Ljava.lang.String;@7205765b
+classname:DataUtil
+classnameelements:[Ljava.lang.String;@47987356
+classname:DataUtil
+classnameelements:[Ljava.lang.String;@22ef9844
+classname:File
+classnameelements:[Ljava.lang.String;@6283d8b8
+classname:FileWriter
+classnameelements:[Ljava.lang.String;@3b6ddd1d
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@3f6b0be5
+classname:DataUtil
+classnameelements:[Ljava.lang.String;@611889f4
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@1da2cb77
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@48f278eb
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@2f217633
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@a530d0a
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@1a18644
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@5acf93bb
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@7e7be63f
+classname:AnnClassifier
+classnameelements:[Ljava.lang.String;@6cd28fa7
+classname:DataNode
+classnameelements:[Ljava.lang.String;@614ca7df
+classname:List < Float > 
+classnameelements:[Ljava.lang.String;@4738a206
+classname:List < Float > 
+classnameelements:[Ljava.lang.String;@66d3eec0
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@1e04fa0a
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@1af2d44a
+classname:DataUtil
+classnameelements:[Ljava.lang.String;@18d87d80
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@618425b5
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@58695725
+classname:BufferedWriter
+classnameelements:[Ljava.lang.String;@543588e6
+文件名:NetworkNode.java
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@66982506
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@70cf32e3
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@5a59ca5e
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@4bdeaabb
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@6c4906d3
+classname:Math
+classnameelements:[Ljava.lang.String;@65987993
+classname:float
+classnameelements:[Ljava.lang.String;@71075444
+classname:Math
+classnameelements:[Ljava.lang.String;@4f32a3ad
+classname:float
+classnameelements:[Ljava.lang.String;@6b695b06
+classname:Math
+classnameelements:[Ljava.lang.String;@4d1bf319
+classname:float
+classnameelements:[Ljava.lang.String;@6f53b8a
+classname:NetworkNode
+classnameelements:[Ljava.lang.String;@5c80cf32
+文件夹:util
+文件名:ConsoleHelper.java
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@7098b907
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@503f91c3
+classname:Float
+classnameelements:[Ljava.lang.String;@13526e59
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@2235eaab
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@17503f6b
+classname:Integer
+classnameelements:[Ljava.lang.String;@3bcd05cb
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@3b6d844d
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@36804139
+classname:HashMap < String , String > 
+classnameelements:[Ljava.lang.String;@20bd8be5
+classname:Map < String , String > 
+classnameelements:[Ljava.lang.String;@730d2164
+文件名:DataUtil.java
+classname:ArrayList < DataNode > 
+classnameelements:[Ljava.lang.String;@3081f72c
+classname:FileReader
+classnameelements:[Ljava.lang.String;@3148f668
+classname:BufferedReader
+classnameelements:[Ljava.lang.String;@6e005dc9
+classname:File
+classnameelements:[Ljava.lang.String;@7ceb3185
+classname:BufferedReader
+classnameelements:[Ljava.lang.String;@436c81a3
+classname:String
+classnameelements:[Ljava.lang.String;@3561c410
+classname:DataNode
+classnameelements:[Ljava.lang.String;@59e32960
+classname:Float
+classnameelements:[Ljava.lang.String;@7c214cc0
+classname:DataNode
+classnameelements:[Ljava.lang.String;@5b67bb7e
+classname:Map < String , Integer > 
+classnameelements:[Ljava.lang.String;@609db546
+classname:Map < String , Integer > 
+classnameelements:[Ljava.lang.String;@20f5281c
+classname:Map < String , Integer > 
+classnameelements:[Ljava.lang.String;@56c4278e
+classname:DataNode
+classnameelements:[Ljava.lang.String;@301eda63
+classname:List < DataNode > 
+classnameelements:[Ljava.lang.String;@3d246ea3
+classname:String
+classnameelements:[Ljava.lang.String;@341814d3
+classname:Map < String , Integer > 
+classnameelements:[Ljava.lang.String;@4397ad89
+classname:Iterator < String > 
+classnameelements:[Ljava.lang.String;@59cba5a
+classname:Iterator < String > 
+classnameelements:[Ljava.lang.String;@1bd39d3c
+classname:Map < String , Integer > 
+classnameelements:[Ljava.lang.String;@6f19ac19
+classname:DataUtil
+classnameelements:[Ljava.lang.String;@119cbf96
+classname:HashMap < String , Integer > 
+classnameelements:[Ljava.lang.String;@71329995
+key=AnnClassifier.AnnClassifier;value=ArrayList.<init>;
+key=AnnClassifier.backward;value=List.get;
+key=DataUtil.DataUtil;value=HashMap<String,Integer>.<init>;
+key=AnnClassifier.test;value=List.get;
+key=ConsoleHelper.ConsoleHelper;value=HashMap<String,String>.<init>;Map<String,String>.put;
+key=DataUtil.getTypeName;value=String.<init>;Map<String,Integer>.keySet;Iterator<String>.hasNext;Iterator<String>.next;Map<String,Integer>.get;
+key=DataNode.DataNode;value=ArrayList<Float>.<init>;
+key=NetworkNode.forwardSigmoid;value=
+key=NetworkNode.tanhSDerivative;value=Math.pow;
+key=AnnClassifier.forward;value=List<Float>.size;List<Float>.get;List.get;
+key=DataUtil.getDataList;value=ArrayList.<init>;FileReader.<init>;BufferedReader.<init>;File.<init>;BufferedReader.readLine;String.split;Float.valueOf;Map<String,Integer>.containsKey;Map<String,Integer>.put;Map<String,Integer>.get;List.add;
+key=AnnClassifier.updateWeights;value=List.get;
+key=MainClass.main;value=File.<init>;FileWriter.<init>;BufferedWriter.<init>;List.get;List.size;List<Float>.size;List<Float>.get;BufferedWriter.write;BufferedWriter.flush;BufferedWriter.close;
+key=NetworkNode.setForwardInputValue;value=
+key=NetworkNode.setBackwardOutputValue;value=
+key=AnnClassifier.train;value=List.size;List.get;
+key=NetworkNode.backwardPropagate;value=
+key=ConsoleHelper.getArg;value=Map<String,String>.containsKey;Map<String,String>.get;
+key=NetworkNode.setForwardOutputValue;value=
+key=DataNode.addAttrib;value=List<Float>.add;
+key=AnnClassifier.reset;value=List.clear;List.add;Math.random;
+key=DataUtil.getInstance;value=
+key=NetworkNode.tanhS;value=Math.exp;
+key=NetworkNode.setBackwardInputValue;value=
+key=NetworkNode.logS;value=Math.exp;
+api count:36
+1.List.get 2.List.clear 3.List.add 4.Math.random 5.List.size 6.List<Float>.size 7.List<Float>.get 8.ArrayList.<init> 9.ArrayList<Float>.<init> 10.List<Float>.add 11.File.<init> 12.FileWriter.<init> 13.BufferedWriter.<init> 14.BufferedWriter.write 15.BufferedWriter.flush 16.BufferedWriter.close 17.Math.pow 18.Math.exp 19.Map<String,String>.containsKey 20.Map<String,String>.get 21.Float.valueOf 22.Integer.valueOf 23.HashMap<String,String>.<init> 24.Map<String,String>.put 25.FileReader.<init> 26.BufferedReader.<init> 27.BufferedReader.readLine 28.String.split 29.Map<String,Integer>.containsKey 30.Map<String,Integer>.put 31.Map<String,Integer>.get 32.String.<init> 33.Map<String,Integer>.keySet 34.Iterator<String>.hasNext 35.Iterator<String>.next 36.HashMap<String,Integer>.<init> 
+[0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 0, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+C:\Users\Administrator\git\repository\Code2APISeq\pngs\1598968161652.png

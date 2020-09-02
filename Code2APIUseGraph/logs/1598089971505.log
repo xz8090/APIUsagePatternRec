@@ -1,0 +1,222 @@
+文件夹:.git
+文件夹:.idea
+文件夹:app
+文件夹:src
+文件夹:androidTest
+文件夹:main
+文件夹:java
+文件夹:com
+文件夹:cleveroad
+文件夹:testrecycler
+文件夹:models
+文件名:AthleticModel.java
+Empty
+文件名:Country.java
+Empty
+文件名:SportCardModel.java
+文件名:SportCardsUtils.java
+文件夹:ui
+文件夹:activities
+文件夹:main_activity
+文件名:MainActivity.java
+文件夹:fragments
+文件夹:full_info_fragment
+文件名:FullInfoTabFragment.java
+文件名:ScoreAdapter.java
+文件夹:main_fragment
+文件名:MainFragment.java
+文件名:SharedTransitionSet.java
+文件名:SportCardsAdapter.java
+文件夹:res
+文件夹:anim
+文件夹:drawable
+文件夹:drawable-hdpi
+文件夹:drawable-ldpi
+文件夹:drawable-mdpi
+文件夹:drawable-tvdpi
+文件夹:drawable-xhdpi
+文件夹:drawable-xxhdpi
+文件夹:drawable-xxxhdpi
+文件夹:layout
+文件夹:layout-land
+文件夹:mipmap-hdpi
+文件夹:mipmap-mdpi
+文件夹:mipmap-xhdpi
+文件夹:mipmap-xxhdpi
+文件夹:mipmap-xxxhdpi
+文件夹:values
+文件夹:values-w820dp
+文件夹:test
+文件夹:gradle
+文件夹:wrapper
+文件夹:images
+文件夹:library
+文件夹:src
+文件夹:androidTest
+文件夹:main
+文件夹:java
+文件夹:com
+文件夹:cleveroad
+文件夹:fanlayoutmanager
+文件名:AnimationHelper.java
+Empty
+文件名:AnimationHelperImpl.java
+文件名:BaseSmoothScroller.java
+文件夹:callbacks
+文件名:FanChildDrawingOrderCallback.java
+文件名:FanCardScroller.java
+文件名:FanLayoutManager.java
+文件名:FanLayoutManagerSettings.java
+文件名:ShiftToCenterCardScroller.java
+文件名:SimpleAnimatorListener.java
+Empty
+文件名:ViewAnimationInfo.java
+Empty
+文件名:ViewAnimationInfoGenerator.java
+文件夹:res
+文件夹:values
+文件夹:test
+key=FanLayoutManager.onRestoreInstanceState;value=
+key=MainFragment.deselectIfSelected;value=
+key=FanLayoutManager.scrollHorizontallyBy;value=
+key=ScoreAdapter.AthleticHolder;value=View.findViewById;ImageView.cast;
+key=AnimationHelperImpl.shiftSideViews;value=LayoutManager.layoutDecorated;
+key=FanLayoutManager.saveState;value=
+key=FanLayoutManager.onItemsRemoved;value=
+key=FanLayoutManagerSettings.withViewHeightDp;value=Context.getResources;Math.round;Math.min;
+key=ScoreAdapter.addItems;value=List.addAll;Collection.size;List.size;
+key=FanLayoutManager.restoreBaseRotationSelectedItem;value=
+key=AnimationHelperImpl.openItem;value=Math.abs;
+key=FanLayoutManager.findCurrentCenterView;value=Math.abs;
+key=SportCardsAdapter.add;value=List.add;
+key=FanLayoutManagerSettings.newBuilder;value=Builder.<init>;
+key=FanLayoutManager.switchItem;value=
+key=FanLayoutManager.generateBaseViewRotation;value=Random.nextFloat;
+key=FanLayoutManager.SavedState;value=
+key=FanCardScroller.calculateTimeForScrolling;value=
+key=BaseSmoothScroller.computeScrollVectorForPosition;value=LayoutManager.getChildAt;LayoutManager.getPosition;
+key=SharedTransitionSet.init;value=
+key=SportCardsAdapter.addAll;value=List.addAll;
+key=FanLayoutManager.findCurrentCenterViewPos;value=
+key=FanLayoutManager.fillRightFromCenter;value=Math.max;Math.abs;View.setLayerType;View.setScaleX;View.setScaleY;
+key=FullInfoTabFragment.onDraw;value=View.getLayoutParams;View.getBottom;
+key=FanLayoutManager.straightenSelectedItem;value=
+key=FanLayoutManager.deselectItem;value=
+key=MainActivity.onBackPressed;value=
+key=MainFragment.onViewCreated;value=View.findViewById;
+key=FanLayoutManager.onItemsUpdated;value=
+key=SportCardModel.createFromParcel;value=
+key=SportCardsAdapter.getItemCount;value=List.size;
+key=FanLayoutManager.onScrollStateChanged;value=
+key=FanLayoutManager.generateDefaultLayoutParams;value=
+key=AnimationHelperImpl.straightenView;value=View.getRotation;
+key=FanLayoutManagerSettings.build;value=Float.compare;
+key=FanLayoutManager.onLayoutChildren;value=
+key=FanLayoutManager.onItemsChanged;value=
+key=FanLayoutManager.scrollToPosition;value=
+key=SportCardsAdapter.onBindViewHolder;value=List.get;ImageView.setImageResource;String.valueOf;ImageView.setTransitionName;
+key=SportCardsAdapter.clear;value=List.clear;
+key=ViewAnimationInfoGenerator.generate;value=ArrayList.<init>;LayoutManager.getChildCount;LayoutManager.getChildAt;LayoutManager.getPosition;LayoutManager.getDecoratedLeft;LayoutManager.getDecoratedRight;LayoutManager.getDecoratedTop;LayoutManager.getDecoratedBottom;List.add;
+key=FanLayoutManager.onItemsAdded;value=
+key=FanLayoutManager.smoothScrollToPosition;value=
+key=FanCardScroller.calculateDxToMakeVisible;value=View.getWidth;LayoutManager.getWidth;
+key=FullInfoTabFragment.onSaveInstanceState;value=
+key=FullInfoTabFragment.onCreateView;value=View.findViewById;ImageView.cast;
+key=FanLayoutManager.collapseViews;value=
+key=FullInfoTabFragment.newInstance;value=
+key=SportCardsAdapter.getModelByPos;value=List.get;
+key=FanLayoutManagerSettings.withViewWidthDp;value=Context.getResources;Math.round;Math.min;
+key=FanLayoutManagerSettings.withAngleItemBounce;value=Math.min;
+key=FullInfoTabFragment.DividerItemDecoration;value=Context.obtainStyledAttributes;
+key=FanLayoutManager.onMeasure;value=Math.sqrt;
+key=FanChildDrawingOrderCallback.onGetChildDrawingOrder;value=LayoutManager>.get;LayoutManager.getChildAt;LayoutManager.getPosition;
+key=FanLayoutManager.closeItem;value=
+key=FanLayoutManager.updateSpecWithExtra;value=
+key=ShiftToCenterCardScroller.calculateDxToMakeVisible;value=View.getWidth;LayoutManager.getWidth;
+key=SportCardsAdapter.onCreateViewHolder;value=
+key=FullInfoTabFragment.onCreate;value=
+key=AnimationHelperImpl.closeItem;value=
+key=FanLayoutManager.fill;value=
+key=ScoreAdapter.onBindViewHolder;value=List.get;String.valueOf;ImageView.setImageResource;
+key=FanLayoutManager.updateArcViewPositions;value=View.getWidth;View.setPivotX;View.getHeight;View.setPivotY;Math.sqrt;View.setTranslationY;Math.signum;Math.asin;Math.toDegrees;View.setRotation;
+key=FanLayoutManager.selectItem;value=
+key=FanLayoutManager.scrollHorizontallyInternal;value=Math.max;Math.min;
+key=AnimationHelperImpl.scaleView;value=View.getWidth;View.setPivotX;View.getHeight;View.setPivotY;View.setScaleX;View.setScaleY;
+key=SportCardsUtils.generateSportCards;value=ArrayList.<init>;List.add;
+key=SportCardModel.build;value=
+key=SportCardModel.writeToParcel;value=
+key=FanLayoutManager.updateItemsByMode;value=
+key=SportCardModel.SportCardModel;value=
+key=MainFragment.newInstance;value=
+key=AnimationHelperImpl.rotateView;value=View.getRotation;
+key=FanLayoutManager.FanLayoutManager;value=
+key=SharedTransitionSet.SharedTransitionSet;value=
+key=FullInfoTabFragment.onViewCreated;value=ImageView.setImageResource;ArrayList.<init>;List.add;
+key=FanLayoutManager.measureChildWithDecorationsAndMargin;value=View.getLayoutParams;View.measure;
+key=SportCardsAdapter.SportCardViewHolder;value=View.findViewById;ImageView.cast;
+key=SportCardModel.newBuilder;value=Builder.<init>;
+key=ScoreAdapter.onCreateViewHolder;value=
+key=FanLayoutManager.createFromParcel;value=
+key=MainActivity.onCreate;value=
+key=FanLayoutManager.setAnimationHelper;value=
+key=ScoreAdapter.clear;value=List.clear;
+key=ScoreAdapter.getItemCount;value=List.size;
+key=FanLayoutManager.onSaveInstanceState;value=
+key=MainFragment.onCreateView;value=
+key=FanChildDrawingOrderCallback.FanChildDrawingOrderCallback;value=WeakReference.<init>;
+key=FanLayoutManager.writeToParcel;value=
+key=FanLayoutManager.scrollToCenter;value=
+key=MainFragment.onClick;value=
+api count:49
+Builder.<init> ArrayList.<init> List.add View.getLayoutParams View.getBottom Context.obtainStyledAttributes ImageView.setImageResource View.findViewById ImageView.cast List.size List.get String.valueOf List.clear List.addAll Collection.size ImageView.setTransitionName View.getRotation LayoutManager.layoutDecorated View.getWidth View.setPivotX View.getHeight View.setPivotY View.setScaleX View.setScaleY Math.abs LayoutManager.getChildAt LayoutManager.getPosition LayoutManager>.get WeakReference.<init> LayoutManager.getWidth Math.max View.setLayerType Random.nextFloat Math.sqrt View.setTranslationY Math.signum Math.asin Math.toDegrees View.setRotation Math.min View.measure Float.compare Context.getResources Math.round LayoutManager.getChildCount LayoutManager.getDecoratedLeft LayoutManager.getDecoratedRight LayoutManager.getDecoratedTop LayoutManager.getDecoratedBottom 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+[0, 3, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+[0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 1, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 2, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 2, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 2, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 0, 1, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0]
+[0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+D:/java0154239/test/Code2APISeq/pngs/1598089973242.png
+finish

@@ -1,0 +1,7 @@
+graph {
+    { rank=same;"A.a";"B.b";"C";"D";"E";}
+"A.a" -- "C" 
+"B.b" -- "C" 
+"B.b" -- "D" 
+"B.b" -- "E" 
+}
