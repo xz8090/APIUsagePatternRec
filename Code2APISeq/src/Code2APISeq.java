@@ -71,14 +71,13 @@ public class Code2APISeq {
 		}
 	}
 	
-	public static void main(String[] args) throws Exception
-	{
+	public static void project2graph() {
 		saveLog();
 		//System.out.println(code);
 		//String code=args[0];
 		//String apiseq=code2apiseq(code);
 		
-		String fileUrl = "C:\\Users\\Administrator\\Downloads\\java-med\\java-med\\training\\Cleveroad__FanLayoutManager";
+		String fileUrl = "C:\\Users\\Administrator\\Downloads\\ANN-master";
 		folder2apiseq(fileUrl);
 		
 		int vcount = allDiffAPIS.size();
@@ -88,7 +87,7 @@ public class Code2APISeq {
         Set<String> keySet = methodNameAPIS.keySet();
         //遍历存放所有key的Set集合
         Iterator<String> it =keySet.iterator();
-        while(it.hasNext()){                        //利用了Iterator迭代器**
+        while(it.hasNext()){                        //利用了Iterator迭代器
             //得到每一个key
             String key = it.next();
             //通过key获取对应的value
@@ -109,13 +108,19 @@ public class Code2APISeq {
 			}
         }
 		System.out.println("api count:"+vcount);
-		for (String string : allDiffAPIS) {
-			System.out.print(string+" ");
+		for (int i=0;i<allDiffAPIS.size();i++) {
+			String string = allDiffAPIS.get(i);
+			System.out.print((i+1)+"." +string+" ");
 		}
 		System.out.println();
 		String arrayStr = graph.showGraph();//类似[1,1],[2,2],[3,3]的格式
 		//调用Python程序生成networkx图
-		PythonInvoke.invoke(arrayStr, graph.getName());
+		try {
+			PythonInvoke.invoke(arrayStr, graph.getName());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		/*
 		//生成dot程序
@@ -131,6 +136,10 @@ public class Code2APISeq {
 			e.printStackTrace();
 		}
 		*/
+	}
+	public static void main(String[] args) throws Exception
+	{
+		project2graph();
 		
 	}
 	
@@ -149,7 +158,7 @@ public class Code2APISeq {
 		if(groumbuilder.getGroums().isEmpty())return "Empty";
 		GROUMGraph groum=groumbuilder.getGroums().get(0);
 		//System.out.println(groum);
-						
+
 		String ouseq= Groum2Sentence(groum);	
 		//System.out.println(ouseq);
 		apiseq=processAPISeq(ouseq);			
@@ -163,7 +172,7 @@ public class Code2APISeq {
 		try {
 			groumbuilder.build(code);
 		} catch (InvalidSyntaxException e) {
-			System.out.println("InvalidSyntax");			
+			System.out.println("InvalidSyntax");
 		}
 		//System.out.println(groumbuilder);
 		if(groumbuilder.getGroums().isEmpty()) System.out.println("Empty");
@@ -172,6 +181,7 @@ public class Code2APISeq {
 			String apiseq="";
 			GROUMGraph groum=groumbuilder.getGroums().get(i);
 			String ouseq= Groum2Sentence(groum);	
+			//System.out.println(ouseq);
 			apiseq=processAPISeq(ouseq);
 			String methodName = groum.getName();
 			methodNameAPIS.put(methodName, apiseq);
@@ -313,12 +323,14 @@ public class Code2APISeq {
 			num_validOUSeqs++;
 			classname=classname.replaceAll("<", " < ").replaceAll(">", " > ").replaceAll(",", " , ").replaceAll("\\s\\s+", " ");
 			String [] classnameelements=classname.split("\\s+");//SortedMap < String , List < Document > >
+			//只收集JDK中的API
+			//if(!APIs.containsKey(classnameelements[0].replaceAll("\\[\\]", "")))continue;
 			if(!APIs.containsKey(classnameelements[0].replaceAll("\\[\\]", "")))continue;
 			classname="";
 			for(String classnameelement:classnameelements)
 			{
-				if(classnameelement.matches("[<>,]"))classname+=" "+classnameelement;
-				else if(APIs.containsKey(classnameelement.replaceAll("\\[\\]", "")))classname+=" "+classnameelement;
+				if(classnameelement.matches("[<>,]"))classname+=classnameelement;
+				else if(APIs.containsKey(classnameelement.replaceAll("\\[\\]", "")))classname+=classnameelement;
 				else continue;
 			}
 			//这个地方正则表达式不完善

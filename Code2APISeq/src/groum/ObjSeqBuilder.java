@@ -14,6 +14,7 @@ import org.eclipse.jdt.core.dom.EnhancedForStatement;
 import org.eclipse.jdt.core.dom.ForStatement;
 import org.eclipse.jdt.core.dom.ConditionalExpression;
 import org.eclipse.jdt.core.dom.IfStatement;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.MethodInvocation;
 import org.eclipse.jdt.core.dom.InstanceofExpression;
@@ -78,6 +79,7 @@ public class ObjSeqBuilder
     }
     
     private void build(final CFile file) {
+    	
         final String content = file.getContent();
        // this.fileID = GROUMNode.fileNames.size();
         //GROUMNode.fileNames.add(file.getPath());
@@ -104,12 +106,15 @@ public class ObjSeqBuilder
     }
     
     private void traverseMethodOnly(final ASTNode root) {
+    	
         if (root.getNodeType() == ASTNode.TYPE_DECLARATION) {
             final TypeDeclaration node = (TypeDeclaration)root;
             if (node.getParent().getNodeType() == ASTNode.COMPILATION_UNIT) {
                 this.className = node.getName().toString();//find the class name of current ast node
             }
         }
+        
+        //方法声明
         if (root.getNodeType() == ASTNode.METHOD_DECLARATION) {
       	  //if the ast node is a method declaration, then build 
       	  //a groum for it and store it.
@@ -125,6 +130,7 @@ public class ObjSeqBuilder
             if(groumName.endsWith(","))groumName=groumName.substring(0, groumName.length()-1);
             groumName+=")";
            
+            //System.out.println(groumName);//eg. AnnClassifier.forward(List<Float> list)
             if(method.getJavadoc()!=null) {
             	aGraph.setComments(method.getJavadoc().toString());
             }
@@ -138,10 +144,10 @@ public class ObjSeqBuilder
             if (aGraph.getNodes().size() >= GROUMGraph.minSize) //check the groum size, if it is too small, ignore.
             {
             	aGraph.setId(this.groums.size() + 1);
-               this.groums.add(aGraph);//store the groum
-               if (this.maxGroumSize < aGraph.getNodes().size()) {
-                     this.maxGroumSize = aGraph.getNodes().size();//record the max size of groums
-               }
+            	this.groums.add(aGraph);//store the groum
+            	if (this.maxGroumSize < aGraph.getNodes().size()) {
+            		this.maxGroumSize = aGraph.getNodes().size();//record the max size of groums
+            	}
             }
         }
         else {
@@ -280,12 +286,14 @@ public class ObjSeqBuilder
                 graph.mergeSeq(aNode);
                 return graph;
             }
+            //方法调用
             case ASTNode.METHOD_INVOCATION: {//build a groum for a method invocation node
                 for (int m = children.size() - 1; m >= 0; --m) {
                     final ASTNode child5 = children.get(m);
                     graph.mergeSeq(this.traverse(cfgNode, child5));
                 }
                 final MethodInvocation mNode = (MethodInvocation)root;
+                System.out.println(mNode.getName());
                 if (mNode.getExpression() != null) {
                     final String ex2 = mNode.getExpression().toString();
                     if (ex2.contains("System.") || ex2.contains("java.")) {

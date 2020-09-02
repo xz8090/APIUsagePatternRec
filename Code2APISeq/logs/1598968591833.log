@@ -1,0 +1,66 @@
+文件名:.classpath
+文件名:.project
+文件夹:data
+文件名:iris.txt
+文件名:test.txt
+文件名:train.txt
+文件夹:pictures
+文件名:BP.png
+文件名:BPNN.png
+文件名:Node.png
+文件名:README.md
+文件夹:src
+文件夹:com
+文件夹:jingchen
+文件夹:ann
+文件名:AnnClassifier.java
+文件名:DataNode.java
+文件名:MainClass.java
+文件名:NetworkNode.java
+文件夹:util
+文件名:ConsoleHelper.java
+文件名:DataUtil.java
+key=AnnClassifier.AnnClassifier;value=
+key=AnnClassifier.backward;value=
+key=DataUtil.DataUtil;value=
+key=AnnClassifier.test;value=
+key=ConsoleHelper.ConsoleHelper;value=
+key=DataUtil.getTypeName;value=String.<init>;
+key=DataNode.DataNode;value=
+key=NetworkNode.forwardSigmoid;value=
+key=NetworkNode.tanhSDerivative;value=Math.pow;
+key=AnnClassifier.forward;value=
+key=DataUtil.getDataList;value=FileReader.<init>;BufferedReader.<init>;File.<init>;BufferedReader.readLine;String.split;Float.valueOf;
+key=AnnClassifier.updateWeights;value=
+key=MainClass.main;value=File.<init>;FileWriter.<init>;BufferedWriter.<init>;BufferedWriter.write;BufferedWriter.flush;BufferedWriter.close;
+key=NetworkNode.setForwardInputValue;value=
+key=NetworkNode.setBackwardOutputValue;value=
+key=AnnClassifier.train;value=
+key=NetworkNode.backwardPropagate;value=
+key=ConsoleHelper.getArg;value=
+key=NetworkNode.setForwardOutputValue;value=
+key=DataNode.addAttrib;value=
+key=AnnClassifier.reset;value=Math.random;
+key=DataUtil.getInstance;value=
+key=NetworkNode.tanhS;value=Math.exp;
+key=NetworkNode.setBackwardInputValue;value=
+key=NetworkNode.logS;value=Math.exp;
+api count:16
+1.Math.random 2.File.<init> 3.FileWriter.<init> 4.BufferedWriter.<init> 5.BufferedWriter.write 6.BufferedWriter.flush 7.BufferedWriter.close 8.Math.pow 9.Math.exp 10.Float.valueOf 11.Integer.valueOf 12.FileReader.<init> 13.BufferedReader.<init> 14.BufferedReader.readLine 15.String.split 16.String.<init> 
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 1, 1, 1, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0]
+[0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 1, 0]
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 1, 0]
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 1, 0]
+[0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+C:\Users\Administrator\git\repository\Code2APISeq\pngs\1598968592723.png

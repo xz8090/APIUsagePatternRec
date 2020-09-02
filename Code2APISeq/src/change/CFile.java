@@ -9,6 +9,8 @@ import java.util.Map;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.AnnotationTypeDeclaration;
 import org.eclipse.jdt.core.dom.EnumDeclaration;
+import org.eclipse.jdt.core.dom.ImportDeclaration;
+import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.AbstractTypeDeclaration;
 import org.eclipse.core.runtime.IProgressMonitor;
@@ -31,7 +33,10 @@ public class CFile extends ChangeEntity
    private String content;
    private CFile mappedFile;
    private CompilationUnit compileUnit;
+   private String packageName = "";
    private HashMap<String, CClass> imports;
+   private HashMap<String, String> importedClasses;
+	private HashSet<String> importedPackages;
    private HashSet<CClass> classes;
 
    public CFile(final CSystem cSystem, final String source) {
@@ -57,6 +62,37 @@ public class CFile extends ChangeEntity
 	 else
 	 {
 	    this.compileUnit = cu;
+	    this.packageName = cu.getPackage().getName().getFullyQualifiedName();
+		this.importedClasses = new HashMap<String, String>();
+		this.importedPackages = new HashSet<String>();
+		if (cu.imports() != null) {
+			for (int i = 0; i < cu.imports().size(); i++) {
+				ImportDeclaration id = (ImportDeclaration) cu.imports().get(i);
+				//System.out.println("getFullyQualifiedName:"+id.getName());
+				if (id.isStatic()) {
+					if (id.getName() instanceof QualifiedName) {
+    					QualifiedName name = (QualifiedName) id.getName();
+    					if (id.isOnDemand()) {
+    						this.importedClasses.put(name.getName().getIdentifier(), name.getFullyQualifiedName());
+        				}
+        				else if (id.getName().isQualifiedName()) {
+        					//FIXME
+        					//this.importedClasses.put(name.getName().getIdentifier(), name.getQualifier().getFullyQualifiedName());
+        					this.importedClasses.put(name.getName().getIdentifier(), name.getFullyQualifiedName());
+        				}
+					}
+				}
+				else if (id.isOnDemand()) {
+					this.importedPackages.add(id.getName().getFullyQualifiedName());
+				}
+				else if (id.getName().isQualifiedName()) {
+					QualifiedName name = (QualifiedName) id.getName();
+					//FIXME
+					//this.importedClasses.put(name.getName().getIdentifier(), name.getQualifier().getFullyQualifiedName());
+					this.importedClasses.put(name.getName().getIdentifier(), name.getFullyQualifiedName());
+				}
+			}
+		}
 	    for (int index = 0; index < cu.types().size(); ++index)
 	    {
 		  final AbstractTypeDeclaration declaration = (AbstractTypeDeclaration) cu.types().get(

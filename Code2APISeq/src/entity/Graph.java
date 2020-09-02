@@ -125,7 +125,8 @@ public class Graph {
 			System.out.println(s);
 			arrayStr = arrayStr + s + ',';
 		}
-		return arrayStr.substring(0, arrayStr.length()-1);
+		if(arrayStr.isEmpty()) return "none";
+		else return arrayStr.substring(0, arrayStr.length()-1);
 	}
 }
 
