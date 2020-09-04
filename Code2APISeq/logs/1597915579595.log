@@ -1,0 +1,23 @@
+LanguagePack.load=Utils.makeDirectory;File.exists;LinkedHashMap<String,String>.clear;File.listFiles;File.isDirectory;File.getAbsolutePath;File.getName;FileInputStream.<init>;InputStreamReader.<init>;BufferedReader.<init>;BufferedReader.readLine;String.split;LinkedHashMap<String,String>.put;
+LanguagePack.get=String.toUpperCase;LinkedHashMap<String,String>.containsKey;LinkedHashMap<String,String>.get;
+api count:16
+String.toUpperCase LinkedHashMap<String,String>.containsKey LinkedHashMap<String,String>.get Utils.makeDirectory File.exists LinkedHashMap<String,String>.clear File.listFiles File.isDirectory File.getAbsolutePath File.getName FileInputStream.<init> InputStreamReader.<init> BufferedReader.<init> BufferedReader.readLine String.split LinkedHashMap<String,String>.put 
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1]
+[0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0]
+保存成功！路径：dots/1597915580566.dot
+dot path:dots/1597915580566.dot
+png path:pngs/1597915580566.png

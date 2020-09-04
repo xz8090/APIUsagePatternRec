@@ -1,0 +1,113 @@
+文件名:.classpath
+文件名:.project
+文件夹:data
+文件名:iris.txt
+文件名:test.txt
+文件名:train.txt
+文件夹:pictures
+文件名:BP.png
+文件名:BPNN.png
+文件名:Node.png
+文件名:README.md
+文件夹:src
+文件夹:com
+文件夹:jingchen
+文件夹:ann
+文件名:AnnClassifier.java
+DataNode.getAttribList AnnClassifier.forward CONTROL.FOR CONTROL.IF List<NetworkNode>.get mOutputNodes.get(i).getForwardOutputValue List<NetworkNode>.get mOutputNodes.get(i).getForwardOutputValue
+List<NetworkNode>.clear List<NetworkNode>.clear List<NetworkNode>.clear CONTROL.FOR NetworkNode.<init> List<NetworkNode>.add CONTROL.FOR NetworkNode.<init> List<NetworkNode>.add CONTROL.FOR NetworkNode.<init> List<NetworkNode>.add CONTROL.FOR CONTROL.FOR Math.random float.cast CONTROL.FOR CONTROL.FOR Math.random float.cast
+AnnClassifier.reset CONTROL.FOR CONTROL.FOR List<DataNode>.size List<DataNode>.get trainNodes.get(j).getAttribList AnnClassifier.forward List<DataNode>.get trainNodes.get(j).getType AnnClassifier.backward AnnClassifier.updateWeights
+CONTROL.FOR CONTROL.IF List<NetworkNode>.get mOutputNodes.get(j).setBackwardInputValue List<NetworkNode>.get mOutputNodes.get(j).getForwardOutputValue CONTROL.FOR CONTROL.FOR List<NetworkNode>.get mOutputNodes.get(k).getBackwardOutputValue List<NetworkNode>.get mHiddenNodes.get(j).setBackwardInputValue
+CONTROL.FOR List<Float>.size List<Float>.get List<NetworkNode>.get mInputNodes.get(k).setForwardInputValue CONTROL.FOR CONTROL.FOR List<NetworkNode>.get mInputNodes.get(k).getForwardOutputValue List<NetworkNode>.get mHiddenNodes.get(j).setForwardInputValue CONTROL.FOR CONTROL.FOR List<NetworkNode>.get mHiddenNodes.get(k).getForwardOutputValue List<NetworkNode>.get mOutputNodes.get(j).setForwardInputValue
+CONTROL.FOR CONTROL.FOR List<NetworkNode>.get mInputNodes.get(i).getForwardOutputValue List<NetworkNode>.get mHiddenNodes.get(j).getBackwardOutputValue CONTROL.FOR CONTROL.FOR List<NetworkNode>.get mHiddenNodes.get(i).getForwardOutputValue List<NetworkNode>.get mOutputNodes.get(j).getBackwardOutputValue
+ArrayList<DataNode>.<init> ArrayList<NetworkNode>.<init> ArrayList<NetworkNode>.<init> ArrayList<NetworkNode>.<init>
+文件名:DataNode.java
+ArrayList<Float>.<init>
+List<Float>.add
+文件名:MainClass.java
+CONTROL.IF ConsoleHelper.<init> ConsoleHelper.getArg ConsoleHelper.getArg ConsoleHelper.getArg ConsoleHelper.getArg ConsoleHelper.getArg ConsoleHelper.getArg DataUtil.getInstance DataUtil.getDataList DataUtil.getDataList File.<init> FileWriter.<init> BufferedWriter.<init> DataUtil.getTypeCount List<DataNode>.get trainList.get(0).getAttribList trainList.get(0).getAttribList().size AnnClassifier.<init> List<DataNode>.get trainList.get(0).getAttribList trainList.get(0).getAttribList().size AnnClassifier.setTrainNodes AnnClassifier.train CONTROL.FOR List<DataNode>.size List<DataNode>.get AnnClassifier.test DataNode.getAttribList CONTROL.FOR List<Float>.size List<Float>.get BufferedWriter.write BufferedWriter.flush DataUtil.getTypeName BufferedWriter.write BufferedWriter.flush BufferedWriter.close
+文件名:NetworkNode.java
+NetworkNode.backwardPropagate
+NetworkNode.setBackwardOutputValue
+NetworkNode.forwardSigmoid
+NetworkNode.setForwardOutputValue
+CONTROL.SWITCH NetworkNode.tanhSDerivative
+Math.pow float.cast
+Math.exp Math.exp Math.exp Math.exp float.cast
+Math.exp float.cast
+CONTROL.SWITCH NetworkNode.tanhS
+文件夹:util
+文件名:ConsoleHelper.java
+CONTROL.IF Map<String,String>.containsKey Map<String,String>.get Float.valueOf
+CONTROL.IF Map<String,String>.containsKey Map<String,String>.get Integer.valueOf
+CONTROL.IF Map<String,String>.containsKey Map<String,String>.get
+HashMap<String,String>.<init> CONTROL.FOR Map<String,String>.put
+文件名:DataUtil.java
+ArrayList<DataNode>.<init> FileReader.<init> BufferedReader.<init> File.<init> CONTROL.WHILE BufferedReader.readLine String.split DataNode.<init> CONTROL.FOR Float.valueOf DataNode.addAttrib CONTROL.IF Map<String,Integer>.containsKey Map<String,Integer>.put Map<String,Integer>.get DataNode.setType List<DataNode>.add
+CONTROL.IF String.<init> Map<String,Integer>.keySet mTypes.keySet().iterator CONTROL.WHILE Iterator<String>.hasNext Iterator<String>.next CONTROL.IF Map<String,Integer>.get
+CONTROL.IF DataUtil.<init>
+HashMap<String,Integer>.<init>
+key=AnnClassifier.AnnClassifier;value=ArrayList.<init>;
+key=AnnClassifier.backward;value=List.get;
+key=DataUtil.DataUtil;value=HashMap<String,Integer>.<init>;
+key=AnnClassifier.test;value=List.get;
+key=ConsoleHelper.ConsoleHelper;value=HashMap<String,String>.<init>;Map<String,String>.put;
+key=DataUtil.getTypeName;value=String.<init>;Map<String,Integer>.keySet;Iterator<String>.hasNext;Iterator<String>.next;Map<String,Integer>.get;
+key=DataNode.DataNode;value=ArrayList<Float>.<init>;
+key=NetworkNode.forwardSigmoid;value=
+key=NetworkNode.tanhSDerivative;value=Math.pow;
+key=AnnClassifier.forward;value=List<Float>.size;List<Float>.get;List.get;
+key=DataUtil.getDataList;value=ArrayList.<init>;FileReader.<init>;BufferedReader.<init>;File.<init>;BufferedReader.readLine;String.split;Float.valueOf;Map<String,Integer>.containsKey;Map<String,Integer>.put;Map<String,Integer>.get;List.add;
+key=AnnClassifier.updateWeights;value=List.get;
+key=MainClass.main;value=File.<init>;FileWriter.<init>;BufferedWriter.<init>;List.get;List.size;List<Float>.size;List<Float>.get;BufferedWriter.write;BufferedWriter.flush;BufferedWriter.close;
+key=NetworkNode.setForwardInputValue;value=
+key=NetworkNode.setBackwardOutputValue;value=
+key=AnnClassifier.train;value=List.size;List.get;
+key=NetworkNode.backwardPropagate;value=
+key=ConsoleHelper.getArg;value=Map<String,String>.containsKey;Map<String,String>.get;
+key=NetworkNode.setForwardOutputValue;value=
+key=DataNode.addAttrib;value=List<Float>.add;
+key=AnnClassifier.reset;value=List.clear;List.add;Math.random;
+key=DataUtil.getInstance;value=
+key=NetworkNode.tanhS;value=Math.exp;
+key=NetworkNode.setBackwardInputValue;value=
+key=NetworkNode.logS;value=Math.exp;
+api count:36
+1.List.get 2.List.clear 3.List.add 4.Math.random 5.List.size 6.List<Float>.size 7.List<Float>.get 8.ArrayList.<init> 9.ArrayList<Float>.<init> 10.List<Float>.add 11.File.<init> 12.FileWriter.<init> 13.BufferedWriter.<init> 14.BufferedWriter.write 15.BufferedWriter.flush 16.BufferedWriter.close 17.Math.pow 18.Math.exp 19.Map<String,String>.containsKey 20.Map<String,String>.get 21.Float.valueOf 22.Integer.valueOf 23.HashMap<String,String>.<init> 24.Map<String,String>.put 25.FileReader.<init> 26.BufferedReader.<init> 27.BufferedReader.readLine 28.String.split 29.Map<String,Integer>.containsKey 30.Map<String,Integer>.put 31.Map<String,Integer>.get 32.String.<init> 33.Map<String,Integer>.keySet 34.Iterator<String>.hasNext 35.Iterator<String>.next 36.HashMap<String,Integer>.<init> 
+[0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 0, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+C:\Users\Administrator\git\repository\Code2APISeq\pngs\1598968812055.png

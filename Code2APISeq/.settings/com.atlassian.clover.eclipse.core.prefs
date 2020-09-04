@@ -1,0 +1,3 @@
+eclipse.preferences.version=1
+exclude_filter=
+include_filter=src//Code2APISeq.java, src//JDKAPIs.java

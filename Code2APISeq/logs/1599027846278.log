@@ -1,0 +1,1077 @@
+文件名:.classpath
+文件名:.project
+文件夹:data
+文件名:iris.txt
+文件名:test.txt
+文件名:train.txt
+文件夹:pictures
+文件名:BP.png
+文件名:BPNN.png
+文件名:Node.png
+文件名:README.md
+文件夹:src
+文件夹:com
+文件夹:jingchen
+文件夹:ann
+文件名:AnnClassifier.java
+
+package com.jingchen.ann;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 人工神经网络分类器
+ * 
+ * @author chenjing
+ * 
+ */
+public class AnnClassifier
+{
+	private int mInputCount;
+	private int mHiddenCount;
+	private int mOutputCount;
+
+	private List<NetworkNode> mInputNodes;
+	private List<NetworkNode> mHiddenNodes;
+	private List<NetworkNode> mOutputNodes;
+
+	private float[][] mInputHiddenWeight;
+	private float[][] mHiddenOutputWeight;
+
+	private List<DataNode> trainNodes;
+
+	public void setTrainNodes(List<DataNode> trainNodes)
+	{
+		this.trainNodes = trainNodes;
+	}
+
+	public AnnClassifier(int inputCount, int hiddenCount, int outputCount)
+	{
+		trainNodes = new ArrayList<DataNode>();
+		mInputCount = inputCount;
+		mHiddenCount = hiddenCount;
+		mOutputCount = outputCount;
+		mInputNodes = new ArrayList<NetworkNode>();
+		mHiddenNodes = new ArrayList<NetworkNode>();
+		mOutputNodes = new ArrayList<NetworkNode>();
+		mInputHiddenWeight = new float[inputCount][hiddenCount];
+		mHiddenOutputWeight = new float[mHiddenCount][mOutputCount];
+	}
+
+	/**
+	 * 更新权重，每个权重的梯度都等于与其相连的前一层节点的输出乘以与其相连的后一层的反向传播的输出
+	 */
+	private void updateWeights(float eta)
+	{
+		// 更新输入层到隐层的权重矩阵
+		for (int i = 0; i < mInputCount; i++)
+			for (int j = 0; j < mHiddenCount; j++)
+				mInputHiddenWeight[i][j] -= eta
+						* mInputNodes.get(i).getForwardOutputValue()
+						* mHiddenNodes.get(j).getBackwardOutputValue();
+		// 更新隐层到输出层的权重矩阵
+		for (int i = 0; i < mHiddenCount; i++)
+			for (int j = 0; j < mOutputCount; j++)
+				mHiddenOutputWeight[i][j] -= eta
+						* mHiddenNodes.get(i).getForwardOutputValue()
+						* mOutputNodes.get(j).getBackwardOutputValue();
+	}
+
+	/**
+	 * 前向传播
+	 */
+	private void forward(List<Float> list)
+	{
+		// 输入层
+		for (int k = 0; k < list.size(); k++)
+			mInputNodes.get(k).setForwardInputValue(list.get(k));
+		// 隐层
+		for (int j = 0; j < mHiddenCount; j++)
+		{
+			float temp = 0;
+			for (int k = 0; k < mInputCount; k++)
+				temp += mInputHiddenWeight[k][j]
+						* mInputNodes.get(k).getForwardOutputValue();
+			mHiddenNodes.get(j).setForwardInputValue(temp);
+		}
+		// 输出层
+		for (int j = 0; j < mOutputCount; j++)
+		{
+			float temp = 0;
+			for (int k = 0; k < mHiddenCount; k++)
+				temp += mHiddenOutputWeight[k][j]
+						* mHiddenNodes.get(k).getForwardOutputValue();
+			mOutputNodes.get(j).setForwardInputValue(temp);
+		}
+	}
+
+	/**
+	 * 反向传播
+	 */
+	private void backward(int type)
+	{
+		// 输出层
+		for (int j = 0; j < mOutputCount; j++)
+		{
+			// 输出层计算误差把误差反向传播，这里-1代表不属于，1代表属于
+			float result = -1;
+			if (j == type)
+				result = 1;
+			mOutputNodes.get(j).setBackwardInputValue(
+					mOutputNodes.get(j).getForwardOutputValue() - result);
+		}
+		// 隐层
+		for (int j = 0; j < mHiddenCount; j++)
+		{
+			float temp = 0;
+			for (int k = 0; k < mOutputCount; k++)
+				temp += mHiddenOutputWeight[j][k]
+						* mOutputNodes.get(k).getBackwardOutputValue();
+			mHiddenNodes.get(j).setBackwardInputValue(temp);
+		}
+	}
+
+	public void train(float eta, int n)
+	{
+		reset();
+		for (int i = 0; i < n; i++)
+		{
+			for (int j = 0; j < trainNodes.size(); j++)
+			{
+				forward(trainNodes.get(j).getAttribList());
+				backward(trainNodes.get(j).getType());
+				updateWeights(eta);
+			}
+			System.out.println("n = " + i);
+
+		}
+	}
+
+	/**
+	 * 初始化
+	 */
+	private void reset()
+	{
+		mInputNodes.clear();
+		mHiddenNodes.clear();
+		mOutputNodes.clear();
+		for (int i = 0; i < mInputCount; i++)
+			mInputNodes.add(new NetworkNode(NetworkNode.TYPE_INPUT));
+		for (int i = 0; i < mHiddenCount; i++)
+			mHiddenNodes.add(new NetworkNode(NetworkNode.TYPE_HIDDEN));
+		for (int i = 0; i < mOutputCount; i++)
+			mOutputNodes.add(new NetworkNode(NetworkNode.TYPE_OUTPUT));
+		for (int i = 0; i < mInputCount; i++)
+			for (int j = 0; j < mHiddenCount; j++)
+				mInputHiddenWeight[i][j] = (float) (Math.random() * 0.1);
+		for (int i = 0; i < mHiddenCount; i++)
+			for (int j = 0; j < mOutputCount; j++)
+				mHiddenOutputWeight[i][j] = (float) (Math.random() * 0.1);
+	}
+
+	public int test(DataNode dn)
+	{
+		forward(dn.getAttribList());
+		float result = 2;
+		int type = 0;
+		// 取最接近1的
+		for (int i = 0; i < mOutputCount; i++)
+			if ((1 - mOutputNodes.get(i).getForwardOutputValue()) < result)
+			{
+				result = 1 - mOutputNodes.get(i).getForwardOutputValue();
+				type = i;
+			}
+		return type;
+	}
+}
+文件名:DataNode.java
+
+package com.jingchen.ann;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DataNode
+{
+	private List<Float> mAttribList;
+	private int type;
+
+	public int getType()
+	{
+		return type;
+	}
+
+	public void setType(int type)
+	{
+		this.type = type;
+	}
+
+	public List<Float> getAttribList()
+	{
+		return mAttribList;
+	}
+
+	public void addAttrib(Float value)
+	{
+		mAttribList.add(value);
+	}
+
+	public DataNode()
+	{
+		mAttribList = new ArrayList<Float>();
+	}
+
+}
+文件名:MainClass.java
+
+package com.jingchen.ann;
+
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.List;
+
+import com.jingchen.util.ConsoleHelper;
+import com.jingchen.util.DataUtil;
+
+/**
+ * 说明：目前使用的这份测试集是从原始数据中随机抽取26个组成的
+ * 
+ * @author chenjing
+ * 
+ */
+public class MainClass
+{
+	public static void main(String[] args) throws Exception
+	{
+		if (args.length < 5)
+		{
+			System.out
+					.println("Usage: \n\t-train trainfile\n\t-test predictfile\n\t-sep separator, default:','\n\t-eta eta, default:0.5\n\t-iter iternum, default:5000\n\t-out outputfile");
+			return;
+		}
+		ConsoleHelper helper = new ConsoleHelper(args);
+		String trainfile = helper.getArg("-train", "");
+		String testfile = helper.getArg("-test", "");
+		String separator = helper.getArg("-sep", ",");
+		String outputfile = helper.getArg("-out", "");
+		float eta = helper.getArg("-eta", 0.02f);
+		int nIter = helper.getArg("-iter", 1000);
+		DataUtil util = DataUtil.getInstance();
+		List<DataNode> trainList = util.getDataList(trainfile, separator);
+		List<DataNode> testList = util.getDataList(testfile, separator);
+		BufferedWriter output = new BufferedWriter(new FileWriter(new File(
+				outputfile)));
+		int typeCount = util.getTypeCount();
+		AnnClassifier annClassifier = new AnnClassifier(trainList.get(0)
+				.getAttribList().size(), trainList.get(0).getAttribList()
+				.size() + 8, typeCount);
+		annClassifier.setTrainNodes(trainList);
+		annClassifier.train(eta, nIter);
+		for (int i = 0; i < testList.size(); i++)
+		{
+			DataNode test = testList.get(i);
+			int type = annClassifier.test(test);
+			List<Float> attribs = test.getAttribList();
+			for (int n = 0; n < attribs.size(); n++)
+			{
+				output.write(attribs.get(n) + ",");
+				output.flush();
+			}
+			output.write(util.getTypeName(type) + "\n");
+			output.flush();
+		}
+		output.close();
+
+	}
+
+}
+文件名:NetworkNode.java
+
+package com.jingchen.ann;
+
+public class NetworkNode
+{
+	public static final int TYPE_INPUT = 0;
+	public static final int TYPE_HIDDEN = 1;
+	public static final int TYPE_OUTPUT = 2;
+
+	private int type;
+
+	public void setType(int type)
+	{
+		this.type = type;
+	}
+
+	// 节点前向输入输出值
+	private float mForwardInputValue;
+	private float mForwardOutputValue;
+
+	// 节点反向输入输出值
+	private float mBackwardInputValue;
+	private float mBackwardOutputValue;
+
+	public NetworkNode()
+	{
+	}
+
+	public NetworkNode(int type)
+	{
+		this.type = type;
+	}
+
+	/**
+	 * sigmoid函数，这里用tan-sigmoid，经测试其效果比log-sigmoid好！
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float forwardSigmoid(float in)
+	{
+		switch (type)
+		{
+		case TYPE_INPUT:
+			return in;
+		case TYPE_HIDDEN:
+		case TYPE_OUTPUT:
+			return tanhS(in);
+		}
+		return 0;
+	}
+
+	/**
+	 * log-sigmoid函数
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float logS(float in)
+	{
+		return (float) (1 / (1 + Math.exp(-in)));
+	}
+
+	/**
+	 * log-sigmoid函数的导数
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float logSDerivative(float in)
+	{
+		return mForwardOutputValue * (1 - mForwardOutputValue) * in;
+	}
+
+	/**
+	 * tan-sigmoid函数
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float tanhS(float in)
+	{
+		return (float) ((Math.exp(in) - Math.exp(-in)) / (Math.exp(in) + Math
+				.exp(-in)));
+	}
+
+	/**
+	 * tan-sigmoid函数的导数
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float tanhSDerivative(float in)
+	{
+		return (float) ((1 - Math.pow(mForwardOutputValue, 2)) * in);
+	}
+
+	/**
+	 * 误差反向传播时，激活函数的导数
+	 * 
+	 * @param in
+	 * @return
+	 */
+	private float backwardPropagate(float in)
+	{
+		switch (type)
+		{
+		case TYPE_INPUT:
+			return in;
+		case TYPE_HIDDEN:
+		case TYPE_OUTPUT:
+			return tanhSDerivative(in);
+		}
+		return 0;
+	}
+
+	public float getForwardInputValue()
+	{
+		return mForwardInputValue;
+	}
+
+	public void setForwardInputValue(float mInputValue)
+	{
+		this.mForwardInputValue = mInputValue;
+		setForwardOutputValue(mInputValue);
+	}
+
+	public float getForwardOutputValue()
+	{
+		return mForwardOutputValue;
+	}
+
+	private void setForwardOutputValue(float mInputValue)
+	{
+		this.mForwardOutputValue = forwardSigmoid(mInputValue);
+	}
+
+	public float getBackwardInputValue()
+	{
+		return mBackwardInputValue;
+	}
+
+	public void setBackwardInputValue(float mBackwardInputValue)
+	{
+		this.mBackwardInputValue = mBackwardInputValue;
+		setBackwardOutputValue(mBackwardInputValue);
+	}
+
+	public float getBackwardOutputValue()
+	{
+		return mBackwardOutputValue;
+	}
+
+	private void setBackwardOutputValue(float input)
+	{
+		this.mBackwardOutputValue = backwardPropagate(input);
+	}
+
+}
+文件夹:util
+文件名:BioclipseManager.java
+
+/* Copyright (c) 2009-2020  Egon Willighagen <egonw@users.sf.net>
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contact: http://www.bioclipse.net/
+ */
+package net.bioclipse.managers;
+
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
+import org.apache.http.NameValuePair;
+import org.apache.http.StatusLine;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.HttpClientBuilder;
+import org.apache.http.message.BasicNameValuePair;
+
+import io.github.egonw.bacting.IBactingManager;
+import net.bioclipse.core.business.BioclipseException;
+import net.bioclipse.core.domain.StringMatrix;
+
+/**
+ * Bioclipse manager providing core functionality. It is similar to the
+ * {@link UIManager} with similar functionality but this manager
+ * is less related to the Bioclipse workspace and user interface interaction.
+ */
+public class BioclipseManager implements IBactingManager {
+
+	private String workspaceRoot;
+
+	/**
+     * Creates a new {@link BioclipseManager}.
+     *
+     * @param workspaceRoot location of the workspace, e.g. "."
+     */
+	public BioclipseManager(String workspaceRoot) {
+		this.workspaceRoot = workspaceRoot;
+	}
+
+	/**
+	 * Determines if online websites can be reached, reflecting access to
+	 * the internet.
+	 *
+	 * @return  true, if the machine has an active internet connection
+	 */
+    public boolean isOnline() {
+    	// if both fail, we do not have internet
+    	String[] sites = new String[]{
+    		"http://google.com/",
+    		"http://slashdot.org/"
+    	};
+    	for (String site : sites) {
+    		try {
+    		    URL url = new URL(site);
+    		    URLConnection conn = url.openConnection();
+    		    conn.connect();
+    		    return true;
+    		} catch (Exception exception) {}
+    	}
+    	return false;
+    }
+
+    /**
+     * Tests if there is an active internet connection and throws an
+     * {@link BioclipseException} if not.
+     *
+     * @throws BioclipseException
+     */
+    public void assumeOnline() throws BioclipseException {
+    	if (!isOnline())
+    		throw new BioclipseException(
+    			"Bioclipse does not have internet access."
+    		);
+    }
+
+    /**
+     * Converts a Bioclipse workspace path for the given file to an
+     * operating system level absolute path. This method is needed if
+     * you want to have access to the file using regular Java, Groovy,
+     * etc programming languages.
+     *
+     * @param file  Bioclipse file path to convert
+     * @return      an absolute file path on the local machine
+     */
+    public String fullPath( String file ) {
+    	return workspaceRoot + file;
+    }
+
+    /**
+     * Queries a remote SPARQL end point without Apache Jena.
+     *
+     * @param serviceURL        the URL of the SPARQL end point
+     * @param sparqlQueryString the SPARQL query
+     * @return                  an {@link StringMatrix} object with results
+     * @throws BioclipseException
+     */
+    public byte[] sparqlRemote(String serviceURL, String sparqlQueryString)
+    throws BioclipseException {
+
+         // use Apache for doing the SPARQL query
+         HttpClient httpclient = HttpClientBuilder.create().build();
+
+         // Set credentials on the client
+         List<NameValuePair> formparams = new ArrayList<NameValuePair>();
+         formparams.add(new BasicNameValuePair("query", sparqlQueryString));
+         try {
+        	 UrlEncodedFormEntity entity = new UrlEncodedFormEntity(formparams, "UTF-8");
+        	 HttpPost httppost = new HttpPost(serviceURL);
+        	 httppost.setEntity(entity);
+        	 HttpResponse response = httpclient.execute(httppost);
+        	 StatusLine statusLine = response.getStatusLine();
+        	 int statusCode = statusLine.getStatusCode();
+        	 if (statusCode != 200) throw new BioclipseException(
+        		 "Expected HTTP 200, but got a " + statusCode + ": " + statusLine.getReasonPhrase()
+        	 );
+
+         	 HttpEntity responseEntity = response.getEntity();
+         	 ByteArrayOutputStream buffer = new ByteArrayOutputStream();
+        	 responseEntity.writeTo(buffer);
+        	 buffer.flush();
+        	 return buffer.toByteArray();
+         } catch (UnsupportedEncodingException exception) {
+        	 throw new BioclipseException(
+                 "Error while creating the SPARQL query: " + exception.getMessage(), exception
+             );
+         } catch (IOException exception) {
+        	 throw new BioclipseException(
+                 "Error while processing the SPARQL endpoint feedback: " + exception.getMessage(), exception
+             );
+         }
+    }
+
+    /**
+     * Downloads the content of the page located by the given URL string as
+     * a Java {@link String}.
+     *
+     * @param url {@link String} version of the URL of the document to download
+     * @return    a {@link String} with the content of the webpage
+     * @throws BioclipseException
+     */
+    public String download(String url)
+    		throws BioclipseException {
+    	return download(url, null);
+    }
+
+    /**
+     * Downloads the content of the page located by the given URL string as
+     * a Java {@link String} in the given mimetype (if provided by the webserver).
+     *
+     * @param url      {@link String} version of the URL of the document to download
+     * @param mimeType the mimetype in which the content should be returned, e.g. text/n3
+     * @return         a {@link String} with the content of the webpage
+     * @throws BioclipseException
+     */
+    public String download(String url, String mimeType) throws BioclipseException {
+    	StringBuffer content = new StringBuffer();
+    	URLConnection rawConn;
+    	try {
+    		rawConn = createURL(url).openConnection();
+    		if (mimeType != null)
+    			rawConn.addRequestProperty("Accept", mimeType);
+    		BufferedReader reader = new BufferedReader(
+    			new InputStreamReader(rawConn.getInputStream())
+    		);
+    		String line = reader.readLine();
+    		while (line != null) {
+    			content.append(line).append('\n');
+    			line = reader.readLine();
+    		}
+    	} catch (IOException exception) {
+    		throw new BioclipseException(
+    			"Error while downloading from URL.", exception
+    		);
+    	}
+    	return content.toString();
+    }
+
+    /**
+     * Downloads the content of the page located by the given URL string as
+     * a file in the Bioclipse workspace and return the path as {@link String}.
+     *
+     * @param url    {@link String} version of the URL of the document to download
+     * @param target path in the Bioclipse workspace where the content should be stored
+     * @return       a {@link String} with the content of the webpage
+     * @throws BioclipseException
+     */
+    public String downloadAsFile(String url, String target) throws BioclipseException {
+    	return downloadAsFile(url, null, target);
+    }
+
+    /**
+     * Downloads the content of the page located by the given URL string as
+     * a file in the given mimetype (if provided by the webserver)
+     * in the Bioclipse workspace and return the path as {@link String}.
+     *
+     * @param url      {@link String} version of the URL of the document to download
+     * @param mimeType the mimetype in which the content should be returned, e.g. text/n3
+     * @param target   path in the Bioclipse workspace where the content should be stored
+     * @return         a {@link String} with the content of the webpage
+     * @throws BioclipseException
+     */
+    public String downloadAsFile(String url, String mimeType, String target)
+    throws BioclipseException {
+    	return downloadAsFile(url, mimeType, target, null);
+    }
+
+    /**
+     * Downloads the content of the page located by the given URL string as
+     * a file in the given mimetype (if provided by the webserver)
+     * in the Bioclipse workspace and return the path as {@link String}.
+     * This version allows setting additional HTTP headers.
+     *
+     * @param url          {@link String} version of the URL of the document to download
+     * @param mimeType     the mimetype in which the content should be returned, e.g. text/n3
+     * @param target       path in the Bioclipse workspace where the content should be stored
+     * @param extraHeaders additional HTTP headers, e.g. useful if authentication is needed
+     * @return             a {@link String} with the content of the webpage
+     * @throws BioclipseException
+     */
+    public String downloadAsFile(String url, String mimeType, String target,
+    		Map<String,String> extraHeaders)
+    				throws BioclipseException {
+    	URLConnection rawConn;
+    	try {
+    		rawConn = createURL(url).openConnection();
+    		if (extraHeaders != null) {
+    			for (String header : extraHeaders.keySet()) {
+    				rawConn.addRequestProperty(header, extraHeaders.get(header));
+    			}
+    		}
+    		if (mimeType != null)
+    			rawConn.addRequestProperty("Accept", mimeType);
+    	    Files.copy(rawConn.getInputStream(), Paths.get(workspaceRoot + target), StandardCopyOption.REPLACE_EXISTING);
+    	} catch (IOException exception) {
+    		if (exception.getMessage().contains("403"))
+    			throw new BioclipseException(
+    				"No access.", exception
+    			);
+    		throw new BioclipseException(
+    			"Error while downloading from URL.", exception
+    		);
+    	}
+    	return target;
+    }
+
+    /**
+     * Creates an {@link URL} object for the given url.
+     *
+     * @param url  {@link String} representation of the URL to return
+     * @return     a {@link URL} object
+     * @throws BioclipseException
+     */
+    private URL createURL(String url) throws BioclipseException {
+        try {
+            return new URL(url);
+        } catch (MalformedURLException e) {
+            throw new BioclipseException("Error while opening browser: " +
+                e.getMessage(), e);
+        }
+    }
+
+    /**
+     * Returns the version of the current Bioclipse libraries.
+     *
+     * @return a String with the version
+     */
+    public String version() {
+        return "2.8.0"; // need to get this from the bioclipse-core pom.xml or so
+    }
+
+    public static class VersionNumberComparator implements Comparator<String> {
+
+        private static Pattern p
+            = Pattern.compile( "(\\d+)\\.(\\d+)(?:\\.(\\d+)(?:\\.(\\S+))?)?" );
+
+        private static final int QUALIFER_POSITION = 4;
+
+        private VersionNumberComparator() {
+        }
+
+        public static final VersionNumberComparator INSTANCE
+            = new VersionNumberComparator();
+
+        @Override
+        public int compare( String o1, String o2 ) {
+            Matcher m1 = p.matcher( o1 );
+            Matcher m2 = p.matcher( o2 );
+            if ( !m1.matches() || !m2.matches() ) {
+                // Build error message
+                String s = null;
+                if ( !m1.matches() ) {
+                    s = o1;
+                }
+                else if ( !m2.matches() ) {
+                    s = o2;
+                }
+                throw new IllegalArgumentException(
+                    "Could not identify the String: \"" + s + "\" as a " +
+                    "version number. Version numbers looks like these: " +
+                    "\"2.2\", \"2.2.0\", or \"2.2.0.RC1");
+            }
+            else {
+                int groups = Math.max( m1.groupCount(), m2.groupCount() );
+                for ( int i = 0 ; i < groups ; i++ ) {
+
+                    if ( i+1 == QUALIFER_POSITION ) {
+                        String g1 = m1.group(i+1) != null ? m1.group(i+1)
+                                                          : "";
+                        String g2 = m2.group(i+1) != null ? m2.group(i+1)
+                                                        : "";
+                        return g1.compareTo( g2 );
+                    }
+                    String g1 = m1.group(i+1) != null ? m1.group(i+1)
+                                                      : "0";
+                    String g2 = m2.group(i+1) != null ? m2.group(i+1)
+                                                      : "0";
+                    Integer i1 = Integer.parseInt( g1 );
+                    Integer i2 = Integer.parseInt( g2 );
+                    if ( i1 < i2 ) {
+                        return -1;
+                    }
+                    if ( i1 > i2 ) {
+                        return +1;
+                    }
+                }
+                return 0;
+            }
+        }
+    }
+
+    /**
+     * Method to check if Bioclipse has the right version that can be used to
+     * ensure it is new enough.
+     *
+     * @param version the minimum required Bioclipse version
+     * @throws BioclipseException
+     */
+    public void requireVersion( String version ) throws BioclipseException {
+        try {
+            if (!(VersionNumberComparator.INSTANCE
+                                         .compare( version, version() ) <= 0)) {
+                throw new BioclipseException(
+                              "You are running Bioclipse version " + version()
+                              + ", but this script requires at least version " + version + ".");
+            }
+        } catch(Exception e) {
+            throw new BioclipseException(e.getMessage(), e);
+        }
+    }
+
+	@Override
+	public String getManagerName() {
+		return "bioclipse";
+	}
+
+	@Override
+	public List<String> doi() {
+		List<String> dois = new ArrayList<String>();
+		dois.add("10.1186/1471-2105-8-59");
+		dois.add("10.1186/1471-2105-10-397");
+		return dois;
+	}
+
+}
+文件名:ConsoleHelper.java
+
+package com.jingchen.util;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class ConsoleHelper {
+	private Map<String, String> mArgMap;
+
+	public ConsoleHelper(String[] args) {
+		mArgMap = new HashMap<String, String>();
+		for (int i = 0; i < args.length; i += 2) {
+			mArgMap.put(args[i], args[i + 1]);
+		}
+	}
+
+	public String getArg(String argName, String defaultValue) {
+		if (mArgMap.containsKey(argName)) {
+			return mArgMap.get(argName);
+		} else
+			return defaultValue;
+	}
+
+	public int getArg(String argName, int defaultValue) {
+		if (mArgMap.containsKey(argName)) {
+			return Integer.valueOf(mArgMap.get(argName));
+		} else
+			return defaultValue;
+	}
+
+	public float getArg(String argName, float defaultValue) {
+		if (mArgMap.containsKey(argName)) {
+			return Float.valueOf(mArgMap.get(argName));
+		} else
+			return defaultValue;
+	}
+}
+文件名:DataUtil.java
+
+package com.jingchen.util;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import com.jingchen.ann.DataNode;
+
+public class DataUtil
+{
+	private static DataUtil instance = null;
+	private Map<String, Integer> mTypes;
+	private int mTypeCount;
+
+	private DataUtil()
+	{
+		mTypes = new HashMap<String, Integer>();
+		mTypeCount = 0;
+	}
+
+	public static synchronized DataUtil getInstance()
+	{
+		if (instance == null)
+			instance = new DataUtil();
+		return instance;
+
+	}
+
+	public Map<String, Integer> getTypeMap()
+	{
+		return mTypes;
+	}
+
+	public int getTypeCount()
+	{
+		return mTypeCount;
+	}
+
+	public String getTypeName(int type)
+	{
+		if (type == -1)
+			return new String("无法判断");
+		Iterator<String> keys = mTypes.keySet().iterator();
+		while (keys.hasNext())
+		{
+			String key = keys.next();
+			if (mTypes.get(key) == type)
+				return key;
+		}
+		return null;
+	}
+
+	/**
+	 * 根据文件生成训练集，注意：程序将以第一个出现的非数字的属性作为类别名称
+	 * 
+	 * @param fileName
+	 *            文件名
+	 * @param sep
+	 *            分隔符
+	 * @return
+	 * @throws Exception
+	 */
+	public List<DataNode> getDataList(String fileName, String sep)
+			throws Exception
+	{
+		List<DataNode> list = new ArrayList<DataNode>();
+		BufferedReader br = new BufferedReader(new FileReader(
+				new File(fileName)));
+		String line = null;
+		while ((line = br.readLine()) != null)
+		{
+			String splits[] = line.split(sep);
+			DataNode node = new DataNode();
+			int i = 0;
+			for (; i < splits.length; i++)
+			{
+				try
+				{
+					node.addAttrib(Float.valueOf(splits[i]));
+				} catch (NumberFormatException e)
+				{
+					// 非数字，则为类别名称，将类别映射为数字
+					if (!mTypes.containsKey(splits[i]))
+					{
+						mTypes.put(splits[i], mTypeCount);
+						mTypeCount++;
+					}
+					node.setType(mTypes.get(splits[i]));
+					list.add(node);
+				}
+			}
+		}
+		return list;
+	}
+}
+key=AnnClassifier.AnnClassifier;value=ArrayList.<init>;
+key=BioclipseManager.downloadAsFile;value=
+key=AnnClassifier.backward;value=List.get;
+key=DataUtil.DataUtil;value=HashMap<String,Integer>.<init>;
+key=AnnClassifier.test;value=List.get;
+key=BioclipseManager.createURL;value=URL.<init>;
+key=BioclipseManager.download;value=
+key=ConsoleHelper.ConsoleHelper;value=HashMap<String,String>.<init>;Map<String,String>.put;
+key=DataUtil.getTypeName;value=String.<init>;Map<String,Integer>.keySet;Iterator<String>.hasNext;Iterator<String>.next;Map<String,Integer>.get;
+key=BioclipseManager.compare;value=Pattern.matcher;Matcher.matches;Matcher.groupCount;Math.max;Matcher.group;String.compareTo;Integer.parseInt;
+key=DataNode.DataNode;value=ArrayList<Float>.<init>;
+key=BioclipseManager.requireVersion;value=
+key=NetworkNode.forwardSigmoid;value=
+key=NetworkNode.tanhSDerivative;value=Math.pow;
+key=AnnClassifier.forward;value=List<Float>.size;List<Float>.get;List.get;
+key=DataUtil.getDataList;value=ArrayList.<init>;FileReader.<init>;BufferedReader.<init>;File.<init>;BufferedReader.readLine;String.split;Float.valueOf;Map<String,Integer>.containsKey;Map<String,Integer>.put;Map<String,Integer>.get;List.add;
+key=AnnClassifier.updateWeights;value=List.get;
+key=MainClass.main;value=File.<init>;FileWriter.<init>;BufferedWriter.<init>;List.get;List.size;List<Float>.size;List<Float>.get;BufferedWriter.write;BufferedWriter.flush;BufferedWriter.close;
+key=NetworkNode.setForwardInputValue;value=
+key=NetworkNode.setBackwardOutputValue;value=
+key=AnnClassifier.train;value=List.size;List.get;
+key=NetworkNode.backwardPropagate;value=
+key=ConsoleHelper.getArg;value=Map<String,String>.containsKey;Map<String,String>.get;
+key=NetworkNode.setForwardOutputValue;value=
+key=BioclipseManager.doi;value=ArrayList<String>.<init>;List<String>.add;
+key=DataNode.addAttrib;value=List<Float>.add;
+key=AnnClassifier.reset;value=List.clear;List.add;Math.random;
+key=DataUtil.getInstance;value=
+key=NetworkNode.tanhS;value=Math.exp;
+key=NetworkNode.setBackwardInputValue;value=
+key=NetworkNode.logS;value=Math.exp;
+key=BioclipseManager.isOnline;value=URL.<init>;URL.openConnection;URLConnection.connect;
+key=BioclipseManager.sparqlRemote;value=ArrayList<NameValuePair>.<init>;List<NameValuePair>.add;ByteArrayOutputStream.<init>;ByteArrayOutputStream.flush;ByteArrayOutputStream.toByteArray;
+key=BioclipseManager.assumeOnline;value=
+api count:62
+1.List.get 2.List.clear 3.List.add 4.Math.random 5.List.size 6.List<Float>.size 7.List<Float>.get 8.ArrayList.<init> 9.ArrayList<Float>.<init> 10.List<Float>.add 11.File.<init> 12.FileWriter.<init> 13.BufferedWriter.<init> 14.BufferedWriter.write 15.BufferedWriter.flush 16.BufferedWriter.close 17.Math.pow 18.Math.exp 19.ArrayList<String>.<init> 20.List<String>.add 21.Pattern.matcher 22.Matcher.matches 23.Matcher.groupCount 24.Math.max 25.Matcher.group 26.String.compareTo 27.Integer.parseInt 28.URL.<init> 29.URL.openConnection 30.Map<String,String>.keySet 31.Map<String,String>.get 32.URLConnection.addRequestProperty 33.Paths.get 34.URLConnection.getInputStream 35.Files.copy 36.StringBuffer.<init> 37.BufferedReader.<init> 38.InputStreamReader.<init> 39.BufferedReader.readLine 40.StringBuffer.append 41.StringBuffer.toString 42.ArrayList<NameValuePair>.<init> 43.List<NameValuePair>.add 44.ByteArrayOutputStream.<init> 45.ByteArrayOutputStream.flush 46.ByteArrayOutputStream.toByteArray 47.URLConnection.connect 48.Map<String,String>.containsKey 49.Float.valueOf 50.Integer.valueOf 51.HashMap<String,String>.<init> 52.Map<String,String>.put 53.FileReader.<init> 54.String.split 55.Map<String,Integer>.containsKey 56.Map<String,Integer>.put 57.Map<String,Integer>.get 58.String.<init> 59.Map<String,Integer>.keySet 60.Iterator<String>.hasNext 61.Iterator<String>.next 62.HashMap<String,Integer>.<init> 
+[0, 0, 0, 0, 2, 2, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 0, 2, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2, 0, 0, 0, 1, 2, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[1, 0, 0, 0, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0]
+[0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 1, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0]
+[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+C:\Users\Administrator\git\repository\Code2APISeq\pngs\1599027847282.png
