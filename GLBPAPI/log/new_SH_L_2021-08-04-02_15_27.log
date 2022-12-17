@@ -1,0 +1,164 @@
+2021-08-04 02:19:33,516-INFO:======================adjacency=====================
+2021-08-04 02:19:33,517-INFO:test start. test set size: 6844
+2021-08-04 03:05:00,502-INFO:test end time: 2726.98490524292s
+2021-08-04 03:05:00,539-INFO:----------------------result@1--------------------------
+2021-08-04 03:05:00,539-INFO:success rate at method level 0.576710
+2021-08-04 03:05:00,540-INFO:mean precision:0.576710, mean recall:0.102154
+2021-08-04 03:05:00,545-INFO:**********************************************************
+2021-08-04 03:05:00,545-INFO:success rate at project level 0.546998
+2021-08-04 03:05:00,545-INFO:mean precision:0.546998, mean recall:0.092481
+2021-08-04 03:05:00,546-WARNING:method level => top 1 : best suc 0.576710, best pre 0.576710,  best recall 0.102154
+2021-08-04 03:05:00,546-WARNING:project level => top 1 : best suc 0.546998, best pre 0.546998,  best recall 0.092481
+2021-08-04 03:05:00,579-INFO:----------------------result@2--------------------------
+2021-08-04 03:05:00,579-INFO:success rate at method level 0.664816
+2021-08-04 03:05:00,580-INFO:mean precision:0.489188, mean recall:0.172481
+2021-08-04 03:05:00,584-INFO:**********************************************************
+2021-08-04 03:05:00,584-INFO:success rate at project level 0.620711
+2021-08-04 03:05:00,584-INFO:mean precision:0.470020, mean recall:0.155774
+2021-08-04 03:05:00,585-WARNING:method level => top 2 : best suc 0.664816, best pre 0.489188,  best recall 0.172481
+2021-08-04 03:05:00,585-WARNING:project level => top 2 : best suc 0.620711, best pre 0.470020,  best recall 0.155774
+2021-08-04 03:05:00,617-INFO:----------------------result@3--------------------------
+2021-08-04 03:05:00,618-INFO:success rate at method level 0.707335
+2021-08-04 03:05:00,618-INFO:mean precision:0.417641, mean recall:0.219833
+2021-08-04 03:05:00,622-INFO:**********************************************************
+2021-08-04 03:05:00,622-INFO:success rate at project level 0.667947
+2021-08-04 03:05:00,622-INFO:mean precision:0.405752, mean recall:0.199396
+2021-08-04 03:05:00,623-WARNING:method level => top 3 : best suc 0.707335, best pre 0.417641,  best recall 0.219833
+2021-08-04 03:05:00,623-WARNING:project level => top 3 : best suc 0.667947, best pre 0.405752,  best recall 0.199396
+2021-08-04 03:05:00,655-INFO:----------------------result@4--------------------------
+2021-08-04 03:05:00,655-INFO:success rate at method level 0.740503
+2021-08-04 03:05:00,655-INFO:mean precision:0.374890, mean recall:0.262244
+2021-08-04 03:05:00,660-INFO:**********************************************************
+2021-08-04 03:05:00,660-INFO:success rate at project level 0.694504
+2021-08-04 03:05:00,660-INFO:mean precision:0.360097, mean recall:0.234777
+2021-08-04 03:05:00,661-WARNING:method level => top 4 : best suc 0.740503, best pre 0.374890,  best recall 0.262244
+2021-08-04 03:05:00,661-WARNING:project level => top 4 : best suc 0.694504, best pre 0.360097,  best recall 0.234777
+2021-08-04 03:05:00,693-INFO:----------------------result@5--------------------------
+2021-08-04 03:05:00,693-INFO:success rate at method level 0.767680
+2021-08-04 03:05:00,694-INFO:mean precision:0.343162, mean recall:0.298204
+2021-08-04 03:05:00,698-INFO:**********************************************************
+2021-08-04 03:05:00,698-INFO:success rate at project level 0.721536
+2021-08-04 03:05:00,698-INFO:mean precision:0.325855, mean recall:0.261996
+2021-08-04 03:05:00,699-WARNING:method level => top 5 : best suc 0.767680, best pre 0.343162,  best recall 0.298204
+2021-08-04 03:05:00,699-WARNING:project level => top 5 : best suc 0.721536, best pre 0.325855,  best recall 0.261996
+2021-08-04 03:05:00,731-INFO:----------------------result@6--------------------------
+2021-08-04 03:05:00,731-INFO:success rate at method level 0.793396
+2021-08-04 03:05:00,731-INFO:mean precision:0.311002, mean recall:0.321067
+2021-08-04 03:05:00,736-INFO:**********************************************************
+2021-08-04 03:05:00,736-INFO:success rate at project level 0.758647
+2021-08-04 03:05:00,736-INFO:mean precision:0.302151, mean recall:0.288504
+2021-08-04 03:05:00,737-WARNING:method level => top 6 : best suc 0.793396, best pre 0.311002,  best recall 0.321067
+2021-08-04 03:05:00,737-WARNING:project level => top 6 : best suc 0.758647, best pre 0.302151,  best recall 0.288504
+2021-08-04 03:05:00,769-INFO:----------------------result@7--------------------------
+2021-08-04 03:05:00,769-INFO:success rate at method level 0.813267
+2021-08-04 03:05:00,769-INFO:mean precision:0.286904, mean recall:0.343220
+2021-08-04 03:05:00,773-INFO:**********************************************************
+2021-08-04 03:05:00,774-INFO:success rate at project level 0.776346
+2021-08-04 03:05:00,774-INFO:mean precision:0.280933, mean recall:0.311659
+2021-08-04 03:05:00,775-WARNING:method level => top 7 : best suc 0.813267, best pre 0.286904,  best recall 0.343220
+2021-08-04 03:05:00,775-WARNING:project level => top 7 : best suc 0.776346, best pre 0.280933,  best recall 0.311659
+2021-08-04 03:05:00,806-INFO:----------------------result@8--------------------------
+2021-08-04 03:05:00,806-INFO:success rate at method level 0.826563
+2021-08-04 03:05:00,807-INFO:mean precision:0.267333, mean recall:0.363138
+2021-08-04 03:05:00,811-INFO:**********************************************************
+2021-08-04 03:05:00,811-INFO:success rate at project level 0.785439
+2021-08-04 03:05:00,811-INFO:mean precision:0.261467, mean recall:0.328612
+2021-08-04 03:05:00,812-WARNING:method level => top 8 : best suc 0.826563, best pre 0.267333,  best recall 0.363138
+2021-08-04 03:05:00,812-WARNING:project level => top 8 : best suc 0.785439, best pre 0.261467,  best recall 0.328612
+2021-08-04 03:05:00,843-INFO:----------------------result@9--------------------------
+2021-08-04 03:05:00,843-INFO:success rate at method level 0.839275
+2021-08-04 03:05:00,844-INFO:mean precision:0.249643, mean recall:0.379580
+2021-08-04 03:05:00,848-INFO:**********************************************************
+2021-08-04 03:05:00,848-INFO:success rate at project level 0.795478
+2021-08-04 03:05:00,848-INFO:mean precision:0.244757, mean recall:0.343632
+2021-08-04 03:05:00,849-WARNING:method level => top 9 : best suc 0.839275, best pre 0.249643,  best recall 0.379580
+2021-08-04 03:05:00,849-WARNING:project level => top 9 : best suc 0.795478, best pre 0.244757,  best recall 0.343632
+2021-08-04 03:05:00,880-INFO:----------------------result@10--------------------------
+2021-08-04 03:05:00,880-INFO:success rate at method level 0.848480
+2021-08-04 03:05:00,880-INFO:mean precision:0.236090, mean recall:0.397246
+2021-08-04 03:05:00,885-INFO:**********************************************************
+2021-08-04 03:05:00,885-INFO:success rate at project level 0.806870
+2021-08-04 03:05:00,885-INFO:mean precision:0.232813, mean recall:0.360637
+2021-08-04 03:05:00,886-WARNING:method level => top 10 : best suc 0.848480, best pre 0.236090,  best recall 0.397246
+2021-08-04 03:05:00,886-WARNING:project level => top 10 : best suc 0.806870, best pre 0.232813,  best recall 0.360637
+2021-08-04 03:05:00,916-INFO:----------------------result@11--------------------------
+2021-08-04 03:05:00,916-INFO:success rate at method level 0.856809
+2021-08-04 03:05:00,917-INFO:mean precision:0.223686, mean recall:0.412609
+2021-08-04 03:05:00,921-INFO:**********************************************************
+2021-08-04 03:05:00,921-INFO:success rate at project level 0.820432
+2021-08-04 03:05:00,921-INFO:mean precision:0.221124, mean recall:0.375210
+2021-08-04 03:05:00,922-WARNING:method level => top 11 : best suc 0.856809, best pre 0.223686,  best recall 0.412609
+2021-08-04 03:05:00,922-WARNING:project level => top 11 : best suc 0.820432, best pre 0.221124,  best recall 0.375210
+2021-08-04 03:05:00,953-INFO:----------------------result@12--------------------------
+2021-08-04 03:05:00,953-INFO:success rate at method level 0.864699
+2021-08-04 03:05:00,953-INFO:mean precision:0.212425, mean recall:0.425986
+2021-08-04 03:05:00,957-INFO:**********************************************************
+2021-08-04 03:05:00,958-INFO:success rate at project level 0.830030
+2021-08-04 03:05:00,958-INFO:mean precision:0.209862, mean recall:0.387277
+2021-08-04 03:05:00,959-WARNING:method level => top 12 : best suc 0.864699, best pre 0.212425,  best recall 0.425986
+2021-08-04 03:05:00,959-WARNING:project level => top 12 : best suc 0.830030, best pre 0.209862,  best recall 0.387277
+2021-08-04 03:05:00,989-INFO:----------------------result@13--------------------------
+2021-08-04 03:05:00,989-INFO:success rate at method level 0.868936
+2021-08-04 03:05:00,990-INFO:mean precision:0.202288, mean recall:0.438297
+2021-08-04 03:05:00,994-INFO:**********************************************************
+2021-08-04 03:05:00,994-INFO:success rate at project level 0.832038
+2021-08-04 03:05:00,994-INFO:mean precision:0.201347, mean recall:0.400630
+2021-08-04 03:05:00,995-WARNING:method level => top 13 : best suc 0.868936, best pre 0.202288,  best recall 0.438297
+2021-08-04 03:05:00,995-WARNING:project level => top 13 : best suc 0.832038, best pre 0.201347,  best recall 0.400630
+2021-08-04 03:05:01,026-INFO:----------------------result@14--------------------------
+2021-08-04 03:05:01,026-INFO:success rate at method level 0.874489
+2021-08-04 03:05:01,026-INFO:mean precision:0.193151, mean recall:0.449423
+2021-08-04 03:05:01,030-INFO:**********************************************************
+2021-08-04 03:05:01,030-INFO:success rate at project level 0.837658
+2021-08-04 03:05:01,030-INFO:mean precision:0.191754, mean recall:0.410135
+2021-08-04 03:05:01,031-WARNING:method level => top 14 : best suc 0.874489, best pre 0.193151,  best recall 0.449423
+2021-08-04 03:05:01,032-WARNING:project level => top 14 : best suc 0.837658, best pre 0.191754,  best recall 0.410135
+2021-08-04 03:05:01,062-INFO:----------------------result@15--------------------------
+2021-08-04 03:05:01,062-INFO:success rate at method level 0.878141
+2021-08-04 03:05:01,062-INFO:mean precision:0.184921, mean recall:0.459843
+2021-08-04 03:05:01,066-INFO:**********************************************************
+2021-08-04 03:05:01,067-INFO:success rate at project level 0.843070
+2021-08-04 03:05:01,067-INFO:mean precision:0.183885, mean recall:0.419388
+2021-08-04 03:05:01,068-WARNING:method level => top 15 : best suc 0.878141, best pre 0.184921,  best recall 0.459843
+2021-08-04 03:05:01,068-WARNING:project level => top 15 : best suc 0.843070, best pre 0.183885,  best recall 0.419388
+2021-08-04 03:05:01,098-INFO:----------------------result@16--------------------------
+2021-08-04 03:05:01,098-INFO:success rate at method level 0.883548
+2021-08-04 03:05:01,098-INFO:mean precision:0.177354, mean recall:0.469988
+2021-08-04 03:05:01,102-INFO:**********************************************************
+2021-08-04 03:05:01,102-INFO:success rate at project level 0.848530
+2021-08-04 03:05:01,102-INFO:mean precision:0.177597, mean recall:0.429952
+2021-08-04 03:05:01,104-WARNING:method level => top 16 : best suc 0.883548, best pre 0.177354,  best recall 0.469988
+2021-08-04 03:05:01,104-WARNING:project level => top 16 : best suc 0.848530, best pre 0.177597,  best recall 0.429952
+2021-08-04 03:05:01,133-INFO:----------------------result@17--------------------------
+2021-08-04 03:05:01,133-INFO:success rate at method level 0.889392
+2021-08-04 03:05:01,134-INFO:mean precision:0.170764, mean recall:0.479764
+2021-08-04 03:05:01,138-INFO:**********************************************************
+2021-08-04 03:05:01,138-INFO:success rate at project level 0.855116
+2021-08-04 03:05:01,138-INFO:mean precision:0.171044, mean recall:0.439419
+2021-08-04 03:05:01,139-WARNING:method level => top 17 : best suc 0.889392, best pre 0.170764,  best recall 0.479764
+2021-08-04 03:05:01,139-WARNING:project level => top 17 : best suc 0.855116, best pre 0.171044,  best recall 0.439419
+2021-08-04 03:05:01,169-INFO:----------------------result@18--------------------------
+2021-08-04 03:05:01,169-INFO:success rate at method level 0.896113
+2021-08-04 03:05:01,169-INFO:mean precision:0.164767, mean recall:0.489426
+2021-08-04 03:05:01,174-INFO:**********************************************************
+2021-08-04 03:05:01,174-INFO:success rate at project level 0.860267
+2021-08-04 03:05:01,174-INFO:mean precision:0.164131, mean recall:0.446055
+2021-08-04 03:05:01,175-WARNING:method level => top 18 : best suc 0.896113, best pre 0.164767,  best recall 0.489426
+2021-08-04 03:05:01,175-WARNING:project level => top 18 : best suc 0.860267, best pre 0.164131,  best recall 0.446055
+2021-08-04 03:05:01,204-INFO:----------------------result@19--------------------------
+2021-08-04 03:05:01,204-INFO:success rate at method level 0.901812
+2021-08-04 03:05:01,205-INFO:mean precision:0.159217, mean recall:0.498378
+2021-08-04 03:05:01,209-INFO:**********************************************************
+2021-08-04 03:05:01,209-INFO:success rate at project level 0.862573
+2021-08-04 03:05:01,209-INFO:mean precision:0.158379, mean recall:0.453448
+2021-08-04 03:05:01,210-WARNING:method level => top 19 : best suc 0.901812, best pre 0.159217,  best recall 0.498378
+2021-08-04 03:05:01,210-WARNING:project level => top 19 : best suc 0.862573, best pre 0.158379,  best recall 0.453448
+2021-08-04 03:05:01,240-INFO:----------------------result@20--------------------------
+2021-08-04 03:05:01,240-INFO:success rate at method level 0.904442
+2021-08-04 03:05:01,241-INFO:mean precision:0.154128, mean recall:0.507328
+2021-08-04 03:05:01,245-INFO:**********************************************************
+2021-08-04 03:05:01,245-INFO:success rate at project level 0.865689
+2021-08-04 03:05:01,245-INFO:mean precision:0.152489, mean recall:0.459529
+2021-08-04 03:05:01,246-WARNING:method level => top 20 : best suc 0.904442, best pre 0.154128,  best recall 0.507328
+2021-08-04 03:05:01,246-WARNING:project level => top 20 : best suc 0.865689, best pre 0.152489,  best recall 0.459529
+2021-08-04 03:05:01,599-INFO:MAP: 0.323410
