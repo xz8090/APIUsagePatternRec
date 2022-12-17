@@ -1,2 +1,2 @@
 # APIUsePattern
-my experiment project of graduate subject
+my experiment project
