@@ -28,12 +28,8 @@ import org.osgi.framework.InvalidSyntaxException;
 
 import entity.Graph;
 
-
-/***
- * Collect Code Groum and Comments from a set of java projects.
- * This class is processed before GithubData.java
- * @author v-xiaodg
- *
+/**
+ * 主程序
  */
 public class Code2APISeq {
 	/***/	
