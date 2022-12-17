@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="com.recommend.buct.windows.APIRecTools">
+  <grid id="27dc6" binding="myPanel" layout-manager="GridLayoutManager" row-count="3" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="813" height="400"/>
+    </constraints>
+    <properties/>
+    <border type="none" title-justification="2">
+      <font/>
+    </border>
+    <children>
+      <component id="496af" class="javax.swing.JButton" binding="loadMetaDatasBtn">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="加载元数据"/>
+        </properties>
+      </component>
+      <scrollpane id="28485" binding="tabScrollPane">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="5" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="68d41" class="javax.swing.JTable" binding="APIUsagesTab">
+            <constraints/>
+            <properties>
+              <autoCreateRowSorter value="false"/>
+              <autoResizeMode value="4"/>
+              <toolTipText value="API使用模式推荐"/>
+            </properties>
+          </component>
+        </children>
+      </scrollpane>
+      <component id="9b155" class="javax.swing.JButton" binding="offlineLearnBtn">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="离线学习"/>
+        </properties>
+      </component>
+      <component id="74970" class="javax.swing.JButton" binding="featureExtractBtn">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="特征提取"/>
+        </properties>
+      </component>
+      <component id="c587d" class="javax.swing.JButton" binding="cancelBtn">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="取消"/>
+        </properties>
+      </component>
+      <component id="3f730" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <font name="Microsoft YaHei" size="18" style="1"/>
+          <foreground color="-16777216"/>
+          <text value="基于上下文感知的API使用模式推荐"/>
+        </properties>
+      </component>
+      <component id="212e7" class="javax.swing.JComboBox" binding="modelType">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <model>
+            <item value="选择模型"/>
+            <item value="CAPIRD"/>
+            <item value="GLAPI"/>
+          </model>
+          <toolTipText value="推荐模型"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>

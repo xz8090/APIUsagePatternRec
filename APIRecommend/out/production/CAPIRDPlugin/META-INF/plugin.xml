@@ -1,0 +1,40 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.recommend.buct.action" class="com.recommend.buct.action.onlineAnalysis" text="APIRecommend"
+            description="测试描述">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift q"/>
+    </action>
+  </actions>
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- secondary:true表示设置在tool window bar最下方 -->
+    <toolWindow id="API usage recommend" anchor="right" factoryClass="com.recommend.buct.windows.MyToolWindowFactory" secondary="true"
+   />
+  </extensions>
+</idea-plugin>

@@ -1,0 +1,47 @@
+<idea-plugin>
+  <id>com.your.company.unique.plugin.id</id>
+  <name>Plugin display name here</name>
+  <version>1.0</version>
+  <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Enter short description for your plugin here.<br>
+      <em>most HTML tags may be used</em>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <depends>com.intellij.modules.lang</depends>
+  <extensions defaultExtensionNs="com.intellij">
+    <toolWindow id="MarkBook" factoryClass="com.recommend.buct.window.NoteListWindowFactory" anchor="right"
+                icon="/img/mark.png"></toolWindow>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="com.recommend.buct.action" class="com.recommend.buct.action.Relation" text="TestTest"
+            description="测试描述">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift q"/>
+    </action>
+    <action id="PopupAction_ID" class="com.recommend.buct.action.PopupAction" text="Mark" description="Add a note"
+            icon="/img/mark.png">
+      <add-to-group group-id="EditorPopupMenu" anchor="first"/>、
+      <keyboard-shortcut keymap="$default" first-keystroke="ctrl shift p"/>
+    </action>
+  </actions>
+
+</idea-plugin>
